@@ -27,11 +27,24 @@
  *
  * @return void
  */
- 
-var Batik=0;
-var ASV=1;
-var Native=2;
-var viewerMode=-1;
+
+/* Env Constants */
+var Batik       = 0;
+var ASV         = 1;
+var Native      = 2;
+
+/**
+ * Current Env variable to indicate whether this script code is 
+ * working under SVG (Batik / ASV) or HTML environment (Native) 
+ * functions. 
+ */
+var viewerMode  = -1;
+
+/**
+ * Ref to the document object
+ */
+var svgDocument = document;
+var svgObjectId = 'svgObject';
 
 function initialise() {
 
@@ -50,6 +63,12 @@ function initialise() {
    
     // Added on 29 April 2015, assume SVG native browser support!
     viewerMode = Native;
+
+    // If running in html document, get the SVG Object
+    if(viewerMode == Native){
+        var graphic = document.getElementById(svgObjectId);
+        svgDocument = graphic.contentDocument;
+    }
 
     initDraw2D();
     initSwing();
@@ -577,16 +596,6 @@ SVGNode.prototype.toString = function() {
  */
 
 /**
- * This variable is used to specify whether this script code is 
- * working under SVG or HTML environment ( Values: svg / html )
- * Used by createSVGNode, deleteSVGNode and deleteSVGNodeById 
- * functions. 
- */
-
-var gMode="svg"; 
-var svgDocument = document;
-
-/**
  * SVG utility functions:
  *
  * Low-level SVG utility functions used to manipulate SVG nodes
@@ -614,9 +623,6 @@ function createDOMNode(nodeType, nodeAttributes, parentNode, namespace) {
 
         // Delete the node if it already exists
         if (nodeAttributes['id']) deleteSVGNodeById(nodeAttributes['id']);
-
-        // If the script code works inside an HTML document then declare svgDocument
-        if (gMode == "html") svgDocument = document.graphic.getSVGDocument();
 
         // Selete ROOT element if parentNode is not given ,.. check if parent node of type Node,..
         if (parentNode == undefined || parentNode == null)
@@ -653,10 +659,6 @@ function createDOMTextNode(text, nodeAttributes, parentNode, nodeType, namespace
 
         var node = createSVGNode(nodeType, nodeAttributes, parentNode, namespace);
 
-        // If the script code works inside an HTML document then declare svgDocument
-        if (gMode == "html") 
-        	svgDocument = document.graphic.getSVGDocument();
-
         // Create the text node and attach it,..
         node.appendChild(svgDocument.createTextNode(text));
 
@@ -664,13 +666,11 @@ function createDOMTextNode(text, nodeAttributes, parentNode, nodeType, namespace
     }
 
 function deleteSVGNode(node) {
-				// Summary:
-				// Delete an SVG node
+    	// Summary:
+    	// Delete an SVG node
+        
         if (!node || node == null) return false;
-        if (gMode != undefined && gMode != null && gMode == 'svg')
             node.parentNode.removeChild(node);
-        else
-            node.getParentNode.removeChild(node);
         return true;
     }
 
