@@ -13,11 +13,24 @@
  *
  * @return void
  */
- 
-var Batik=0;
-var ASV=1;
-var Native=2;
-var viewerMode=-1;
+
+/* Env Constants */
+var Batik       = 0;
+var ASV         = 1;
+var Native      = 2;
+
+/**
+ * Current Env variable to indicate whether this script code is 
+ * working under SVG (Batik / ASV) or HTML environment (Native) 
+ * functions. 
+ */
+var viewerMode  = -1;
+
+/**
+ * Ref to the document object
+ */
+var svgDocument = document;
+var svgObjectId = 'svgObject';
 
 function initialise() {
 
@@ -36,6 +49,12 @@ function initialise() {
    
     // Added on 29 April 2015, assume SVG native browser support!
     viewerMode = Native;
+
+    // If running in html document, get the SVG Object
+    if(viewerMode == Native){
+        var graphic = document.getElementById(svgObjectId);
+        svgDocument = graphic.contentDocument;
+    }
 
     initDraw2D();
     initSwing();

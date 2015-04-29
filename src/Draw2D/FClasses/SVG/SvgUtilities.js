@@ -9,16 +9,6 @@
  */
 
 /**
- * This variable is used to specify whether this script code is 
- * working under SVG or HTML environment ( Values: svg / html )
- * Used by createSVGNode, deleteSVGNode and deleteSVGNodeById 
- * functions. 
- */
-
-var gMode="svg"; 
-var svgDocument = document;
-
-/**
  * SVG utility functions:
  *
  * Low-level SVG utility functions used to manipulate SVG nodes
@@ -46,9 +36,6 @@ function createDOMNode(nodeType, nodeAttributes, parentNode, namespace) {
 
         // Delete the node if it already exists
         if (nodeAttributes['id']) deleteSVGNodeById(nodeAttributes['id']);
-
-        // If the script code works inside an HTML document then declare svgDocument
-        if (gMode == "html") svgDocument = document.graphic.getSVGDocument();
 
         // Selete ROOT element if parentNode is not given ,.. check if parent node of type Node,..
         if (parentNode == undefined || parentNode == null)
@@ -85,10 +72,6 @@ function createDOMTextNode(text, nodeAttributes, parentNode, nodeType, namespace
 
         var node = createSVGNode(nodeType, nodeAttributes, parentNode, namespace);
 
-        // If the script code works inside an HTML document then declare svgDocument
-        if (gMode == "html") 
-        	svgDocument = document.graphic.getSVGDocument();
-
         // Create the text node and attach it,..
         node.appendChild(svgDocument.createTextNode(text));
 
@@ -96,13 +79,11 @@ function createDOMTextNode(text, nodeAttributes, parentNode, nodeType, namespace
     }
 
 function deleteSVGNode(node) {
-				// Summary:
-				// Delete an SVG node
+    	// Summary:
+    	// Delete an SVG node
+        
         if (!node || node == null) return false;
-        if (gMode != undefined && gMode != null && gMode == 'svg')
             node.parentNode.removeChild(node);
-        else
-            node.getParentNode.removeChild(node);
         return true;
     }
 
