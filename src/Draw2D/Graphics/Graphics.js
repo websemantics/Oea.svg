@@ -160,6 +160,11 @@ Graphics.prototype.drawImage = function(x, y, w, h, path) {
         return (new Image(x, y, w, h, path, this));
     }
 
+Graphics.prototype.drawSpinnerImage = function(x, y, w, h, name, color) {
+        // New: 1 May 2015
+        return (new SpinnerImage(x, y, w, h, name, color, this));
+    }
+
 Graphics.prototype.drawText = function(x, y, string, nodeType, parentSvgNode) {
         return (new Text(x, y, string, this, nodeType, parentSvgNode));
     }

@@ -302,8 +302,6 @@ Container.prototype.econtMouseStartDragged = function( /* MouseEvent */ e) {
 
 Container.prototype.econtMouseEndDragged = function( /* MouseEvent */ e) {
 
-        this.restoreASVContextMenue(); // <=======[restoreASVContextMenue]
-
         tp_turnToolTipOn(); // <======[ Turn the Tooltip on]
 
         if (this.draggOwner != null) {
@@ -352,8 +350,6 @@ Container.prototype.econtMouseEntered = function( /* MouseEvent */ e) {
 
 Container.prototype.econtMouseExited = function( /* MouseEvent */ e) {
         
-        this.restoreASVContextMenue(); // <==========[restoreASVContextMenue]
-
         if (this.moveOwner != null && this.draggOwner == null) {
             d = this.moveOwner;
             this.moveOwner = null;
@@ -369,8 +365,6 @@ Container.prototype.econtMouseClicked = function( /* MouseEvent */ e) {
     }
 
 Container.prototype.econtMousePressed = function( /* MouseEvent */ e) {
-
-        this.removeASVContextMenue(); // <==========[removeASVContextMenue]
 
         var d = this.getComponentAt(e.getX(), e.getY());
 
@@ -405,7 +399,6 @@ Container.prototype.econtMousePressed = function( /* MouseEvent */ e) {
     }
 
 Container.prototype.econtMouseReleased = function( /* MouseEvent */ e) {
-        this.restoreASVContextMenue(); // <===============[restoreASVContextMenue]
         var d = this.getComponentAt(e.getX(), e.getY())
         if (this.isEventable(d)) this.fireMouseEventToComponent(d, "mouseReleased", e);
     }
@@ -452,27 +445,3 @@ Container.prototype.fireMouseMotionEventToComponent = function( /* component */ 
 
         comp.mouseMotionEventHandler(eventType, event);
     }
-    //===================================================================
-    //
-    // Customized methods for Adobe SVG plugin to remove the ContextMenu
-    //
-    //===================================================================
-
-Container.prototype.removeASVContextMenue = function() {
-    // Summary:
-    // Remove ASV context Menue
-
-        if (!contextMenu && contextMenu == undefined) return;
-        if (contextMenu.firstChild && contextMenu.firstChild != null) {
-            this.oldContextMenu = contextMenu.firstChild;
-            contextMenu.removeChild(contextMenu.firstChild);
-        }
-    }
-
-Container.prototype.restoreASVContextMenue = function() {
-    // Summary:
-    // Restore ASV context Menue
-
-    if (contextMenu && contextMenu == undefined || this.oldContextMenu == null) return;
-    if (!contextMenu.firstChild) contextMenu.appendChild(this.oldContextMenu);
-}

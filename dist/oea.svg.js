@@ -10,7 +10,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// build: 2015-04-29
+// build: 2015-05-04
 
 /**
  * Oea.svg
@@ -38,19 +38,19 @@ var Native      = 2;
  * working under SVG (Batik / ASV) or HTML environment (Native) 
  * functions. 
  */
-var viewerMode  = -1;
+var viewerMode  = Native;
 
 /**
- * Ref to the document object
+ * Ref to the document object / use document as default for running inside SVG
+ * This can be set to the svg object when window.onload event!
  */
+
 var svgDocument = document;
-var svgObjectId = 'svgObject';
 
 function initialise() {
 
-    // Find out which SVG viewer is running? (Batik or ASV)
-    if (svgDocument.documentElement.viewport) {
-        viewerMode = Batik;
+    if (viewerMode == Batik) {
+
         // Correct a bug []
         VK_ENTER = 10; // for ASV it is 13!
         // Fix some shortages of Batik [ set variables innerWidth and innerHeight and define function printNode]
@@ -58,21 +58,14 @@ function initialise() {
         // window.innerHeight=svgDocument.documentElement.viewport.getHeight();
         window.contextMenu = null;
         window.printNode = printXMLNode // (find it at: src/svgDraw2d/FClasses/SVG/SvgUtilities.js);
-    } else
-        viewerMode = ASV;
-   
-    // Added on 29 April 2015, assume SVG native browser support!
-    viewerMode = Native;
-
-    // If running in html document, get the SVG Object
-    if(viewerMode == Native){
-        var graphic = document.getElementById(svgObjectId);
-        svgDocument = graphic.contentDocument;
-    }
+    } 
 
     initDraw2D();
     initSwing();
 }
+
+
+
 
 /**
  * Draw2D.svg
@@ -760,7 +753,7 @@ function df_addToDefs(node){
 	if(defsNode != null && !defsNode.addChild) 
 		defsNode.appendChild(node);
 	 else 
-	 defsNode.addChild(node); // <= does not work with older plug-in (ver 3)
+	 	defsNode.addChild(node); // <= does not work with older plug-in (ver 3)
 }
 
 /**
@@ -1785,6 +1778,11 @@ Graphics.prototype.drawPolygon = function(x, y, xx, yy) {
 
 Graphics.prototype.drawImage = function(x, y, w, h, path) {
         return (new Image(x, y, w, h, path, this));
+    }
+
+Graphics.prototype.drawSpinnerImage = function(x, y, w, h, name, color) {
+        // New: 1 May 2015
+        return (new SpinnerImage(x, y, w, h, name, color, this));
     }
 
 Graphics.prototype.drawText = function(x, y, string, nodeType, parentSvgNode) {
@@ -3250,6 +3248,50 @@ Image.prototype.onResize = function() {
     this.setAttribute("height", this.h);
 }
 /**
+ * Draw2D.svg : SpinnerImage
+ *
+ * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ * @since     1st May 2015
+ * @package   websemantics/oea/draw2d.svg/shapes
+ */
+
+SpinnerImage.prototype = new Image();
+
+function SpinnerImage(x, y, w, h, name, color, graphics) {
+        var argv = SpinnerImage.arguments;
+        var argc = SpinnerImage.length;
+        this.className = "SpinnerImage";
+        
+        color = color || '#000';
+
+        // VG-Loaders:https://github.com/SamHerbert/SVG-Loaders/tree/master/svg-loaders
+        this.spinners = {
+            audio : 'data:image/svg+xml,<svg width="55" height="80" viewBox="0 0 55 80" xmlns="http://www.w3.org/2000/svg" fill="'+color+'"> <g transform="matrix(1 0 0 -1 0 80)"> <rect width="10" height="20" rx="3"> <animate attributeName="height" begin="0s" dur="4.3s" values="20;45;57;80;64;32;66;45;64;23;66;13;64;56;34;34;2;23;76;79;20" calcMode="linear" repeatCount="indefinite"/> </rect> <rect x="15" width="10" height="80" rx="3"> <animate attributeName="height" begin="0s" dur="2s" values="80;55;33;5;75;23;73;33;12;14;60;80" calcMode="linear" repeatCount="indefinite"/> </rect> <rect x="30" width="10" height="50" rx="3"> <animate attributeName="height" begin="0s" dur="1.4s" values="50;34;78;23;56;23;34;76;80;54;21;50" calcMode="linear" repeatCount="indefinite"/> </rect> <rect x="45" width="10" height="30" rx="3"> <animate attributeName="height" begin="0s" dur="2s" values="30;45;13;80;56;72;45;76;34;23;67;30" calcMode="linear" repeatCount="indefinite"/> </rect> </g></svg>',
+            ball_triangle : 'data:image/svg+xml,<svg width="57" height="57" viewBox="0 0 57 57" xmlns="http://www.w3.org/2000/svg" stroke="'+color+'"> <g fill="none" fill-rule="evenodd"> <g transform="translate(1 1)" stroke-width="2"> <circle cx="5" cy="50" r="5"> <animate attributeName="cy" begin="0s" dur="2.2s" values="50;5;50;50" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="cx" begin="0s" dur="2.2s" values="5;27;49;5" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="27" cy="5" r="5"> <animate attributeName="cy" begin="0s" dur="2.2s" from="5" to="5" values="5;50;50;5" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="cx" begin="0s" dur="2.2s" from="27" to="27" values="27;49;5;27" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="49" cy="50" r="5"> <animate attributeName="cy" begin="0s" dur="2.2s" values="50;50;5;50" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="cx" from="49" to="49" begin="0s" dur="2.2s" values="49;5;27;49" calcMode="linear" repeatCount="indefinite"/> </circle> </g> </g></svg>',
+            bars : 'data:image/svg+xml,<svg width="135" height="140" viewBox="0 0 135 140" xmlns="http://www.w3.org/2000/svg" fill="'+color+'"> <rect y="10" width="15" height="120" rx="6"> <animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/> </rect> <rect x="30" y="10" width="15" height="120" rx="6"> <animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/> </rect> <rect x="60" width="15" height="140" rx="6"> <animate attributeName="height" begin="0s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="y" begin="0s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/> </rect> <rect x="90" y="10" width="15" height="120" rx="6"> <animate attributeName="height" begin="0.25s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="y" begin="0.25s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/> </rect> <rect x="120" y="10" width="15" height="120" rx="6"> <animate attributeName="height" begin="0.5s" dur="1s" values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="y" begin="0.5s" dur="1s" values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear" repeatCount="indefinite"/> </rect></svg>',
+            circles : 'data:image/svg+xml,<svg width="135" height="135" viewBox="0 0 135 135" xmlns="http://www.w3.org/2000/svg" fill="'+color+'"> <path d="M67.447 58c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10zm9.448 9.447c0 5.523 4.477 10 10 10 5.522 0 10-4.477 10-10s-4.478-10-10-10c-5.523 0-10 4.477-10 10zm-9.448 9.448c-5.523 0-10 4.477-10 10 0 5.522 4.477 10 10 10s10-4.478 10-10c0-5.523-4.477-10-10-10zM58 67.447c0-5.523-4.477-10-10-10s-10 4.477-10 10 4.477 10 10 10 10-4.477 10-10z"> <animateTransform attributeName="transform" type="rotate" from="0 67 67" to="-360 67 67" dur="2.5s" repeatCount="indefinite"/> </path> <path d="M28.19 40.31c6.627 0 12-5.374 12-12 0-6.628-5.373-12-12-12-6.628 0-12 5.372-12 12 0 6.626 5.372 12 12 12zm30.72-19.825c4.686 4.687 12.284 4.687 16.97 0 4.686-4.686 4.686-12.284 0-16.97-4.686-4.687-12.284-4.687-16.97 0-4.687 4.686-4.687 12.284 0 16.97zm35.74 7.705c0 6.627 5.37 12 12 12 6.626 0 12-5.373 12-12 0-6.628-5.374-12-12-12-6.63 0-12 5.372-12 12zm19.822 30.72c-4.686 4.686-4.686 12.284 0 16.97 4.687 4.686 12.285 4.686 16.97 0 4.687-4.686 4.687-12.284 0-16.97-4.685-4.687-12.283-4.687-16.97 0zm-7.704 35.74c-6.627 0-12 5.37-12 12 0 6.626 5.373 12 12 12s12-5.374 12-12c0-6.63-5.373-12-12-12zm-30.72 19.822c-4.686-4.686-12.284-4.686-16.97 0-4.686 4.687-4.686 12.285 0 16.97 4.686 4.687 12.284 4.687 16.97 0 4.687-4.685 4.687-12.283 0-16.97zm-35.74-7.704c0-6.627-5.372-12-12-12-6.626 0-12 5.373-12 12s5.374 12 12 12c6.628 0 12-5.373 12-12zm-19.823-30.72c4.687-4.686 4.687-12.284 0-16.97-4.686-4.686-12.284-4.686-16.97 0-4.687 4.686-4.687 12.284 0 16.97 4.686 4.687 12.284 4.687 16.97 0z"> <animateTransform attributeName="transform" type="rotate" from="0 67 67" to="360 67 67" dur="8s" repeatCount="indefinite"/> </path></svg>',
+            grid : 'data:image/svg+xml,<svg width="105" height="105" viewBox="0 0 105 105" xmlns="http://www.w3.org/2000/svg" fill="'+color+'"> <circle cx="12.5" cy="12.5" r="12.5"> <animate attributeName="fill-opacity" begin="0s" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="12.5" cy="52.5" r="12.5" fill-opacity=".5"> <animate attributeName="fill-opacity" begin="100ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="52.5" cy="12.5" r="12.5"> <animate attributeName="fill-opacity" begin="300ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="52.5" cy="52.5" r="12.5"> <animate attributeName="fill-opacity" begin="600ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="92.5" cy="12.5" r="12.5"> <animate attributeName="fill-opacity" begin="800ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="92.5" cy="52.5" r="12.5"> <animate attributeName="fill-opacity" begin="400ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="12.5" cy="92.5" r="12.5"> <animate attributeName="fill-opacity" begin="700ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="52.5" cy="92.5" r="12.5"> <animate attributeName="fill-opacity" begin="500ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="92.5" cy="92.5" r="12.5"> <animate attributeName="fill-opacity" begin="200ms" dur="1s" values="1;.2;1" calcMode="linear" repeatCount="indefinite"/> </circle></svg>',
+            hearts : 'data:image/svg+xml,<svg width="140" height="64" viewBox="0 0 140 64" xmlns="http://www.w3.org/2000/svg" fill="'+color+'"> <path d="M30.262 57.02L7.195 40.723c-5.84-3.976-7.56-12.06-3.842-18.063 3.715-6 11.467-7.65 17.306-3.68l4.52 3.76 2.6-5.274c3.717-6.002 11.47-7.65 17.305-3.68 5.84 3.97 7.56 12.054 3.842 18.062L34.49 56.118c-.897 1.512-2.793 1.915-4.228.9z" fill-opacity=".5"> <animate attributeName="fill-opacity" begin="0s" dur="1.4s" values="0.5;1;0.5" calcMode="linear" repeatCount="indefinite"/> </path> <path d="M105.512 56.12l-14.44-24.272c-3.716-6.008-1.996-14.093 3.843-18.062 5.835-3.97 13.588-2.322 17.306 3.68l2.6 5.274 4.52-3.76c5.84-3.97 13.592-2.32 17.307 3.68 3.718 6.003 1.998 14.088-3.842 18.064L109.74 57.02c-1.434 1.014-3.33.61-4.228-.9z" fill-opacity=".5"> <animate attributeName="fill-opacity" begin="0.7s" dur="1.4s" values="0.5;1;0.5" calcMode="linear" repeatCount="indefinite"/> </path> <path d="M67.408 57.834l-23.01-24.98c-5.864-6.15-5.864-16.108 0-22.248 5.86-6.14 15.37-6.14 21.234 0L70 16.168l4.368-5.562c5.863-6.14 15.375-6.14 21.235 0 5.863 6.14 5.863 16.098 0 22.247l-23.007 24.98c-1.43 1.556-3.757 1.556-5.188 0z"/></svg>',
+            oval : 'data:image/svg+xml,<svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="'+color+'"> <g fill="none" fill-rule="evenodd"> <g transform="translate(1 1)" stroke-width="2"> <circle stroke-opacity=".5" cx="18" cy="18" r="18"/> <path d="M36 18c0-9.94-8.06-18-18-18"> <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/> </path> </g> </g></svg>',
+            puff : 'data:image/svg+xml,<svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="'+color+'"> <g fill="none" fill-rule="evenodd" stroke-width="2"> <circle cx="22" cy="22" r="1"> <animate attributeName="r" begin="0s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"/> <animate attributeName="stroke-opacity" begin="0s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"/> </circle> <circle cx="22" cy="22" r="1"> <animate attributeName="r" begin="-0.9s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"/> <animate attributeName="stroke-opacity" begin="-0.9s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"/> </circle> </g></svg>',
+            rings : 'data:image/svg+xml,<svg width="45" height="45" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="'+color+'"> <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2"> <circle cx="22" cy="22" r="6" stroke-opacity="0"> <animate attributeName="r" begin="1.5s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="stroke-opacity" begin="1.5s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="stroke-width" begin="1.5s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="22" cy="22" r="6" stroke-opacity="0"> <animate attributeName="r" begin="3s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="stroke-opacity" begin="3s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="stroke-width" begin="3s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="22" cy="22" r="8"> <animate attributeName="r" begin="0s" dur="1.5s" values="6;1;2;3;4;5;6" calcMode="linear" repeatCount="indefinite"/> </circle> </g></svg>',
+            spinning_circles : 'data:image/svg+xml,<svg width="58" height="58" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg"> <g fill="none" fill-rule="evenodd"> <g transform="translate(2 1)" stroke="'+color+'" stroke-width="1.5"> <circle cx="42.601" cy="11.462" r="5" fill-opacity="1" fill="'+color+'"> <animate attributeName="fill-opacity" begin="0s" dur="1.3s" values="1;0;0;0;0;0;0;0" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="49.063" cy="27.063" r="5" fill-opacity="0" fill="'+color+'"> <animate attributeName="fill-opacity" begin="0s" dur="1.3s" values="0;1;0;0;0;0;0;0" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="42.601" cy="42.663" r="5" fill-opacity="0" fill="'+color+'"> <animate attributeName="fill-opacity" begin="0s" dur="1.3s" values="0;0;1;0;0;0;0;0" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="27" cy="49.125" r="5" fill-opacity="0" fill="'+color+'"> <animate attributeName="fill-opacity" begin="0s" dur="1.3s" values="0;0;0;1;0;0;0;0" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="11.399" cy="42.663" r="5" fill-opacity="0" fill="'+color+'"> <animate attributeName="fill-opacity" begin="0s" dur="1.3s" values="0;0;0;0;1;0;0;0" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="4.938" cy="27.063" r="5" fill-opacity="0" fill="'+color+'"> <animate attributeName="fill-opacity" begin="0s" dur="1.3s" values="0;0;0;0;0;1;0;0" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="11.399" cy="11.462" r="5" fill-opacity="0" fill="'+color+'"> <animate attributeName="fill-opacity" begin="0s" dur="1.3s" values="0;0;0;0;0;0;1;0" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="27" cy="5" r="5" fill-opacity="0" fill="'+color+'"> <animate attributeName="fill-opacity" begin="0s" dur="1.3s" values="0;0;0;0;0;0;0;1" calcMode="linear" repeatCount="indefinite"/> </circle> </g> </g></svg>',
+            tail_spin : 'data:image/svg+xml,<svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"> <defs> <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a"> <stop stop-color="'+color+'" stop-opacity="0" offset="0%"/> <stop stop-color="'+color+'" stop-opacity=".631" offset="63.146%"/> <stop stop-color="'+color+'" offset="100%"/> </linearGradient> </defs> <g fill="none" fill-rule="evenodd"> <g transform="translate(1 1)"> <path d="M36 18c0-9.94-8.06-18-18-18" id="Oval-2" stroke="url(#a)" stroke-width="2"> <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="0.9s" repeatCount="indefinite"/> </path> <circle fill="'+color+'" cx="36" cy="18" r="1"> <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="0.9s" repeatCount="indefinite"/> </circle> </g> </g></svg>',
+            three_dots : 'data:image/svg+xml,<svg width="120" height="30" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg" fill="'+color+'"> <circle cx="15" cy="15" r="15"> <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="60" cy="15" r="9" fill-opacity="0.3"> <animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite"/> </circle> <circle cx="105" cy="15" r="15"> <animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite"/> <animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite"/> </circle></svg>',
+        };
+
+        var spinner = this.spinners[name] ? this.spinners[name] : this.spinners['tail_spin'];
+
+        if (argv.length > 0)
+            this.initSpinner(x, y, w, h, spinner, graphics);
+    }
+
+SpinnerImage.prototype.initSpinner = function(x, y, w, h, spinner, graphics) {
+        this.initImage(x, y, w, h, spinner, graphics);
+    }
+/**
  * Draw2D.svg : Cursor
  *
  * Cursor SVG type:
@@ -3337,7 +3379,7 @@ var toolTipNode=null;
 var toolTipNodeId="ToolTip";
 var toolTipFontSize=9;
 var toolTipFontSizeUnit='pt';
-var toolTipFontName='Aril';
+var toolTipFontName='Helvetica';
 var toolTipFontStyle='normal';
 var toolTipTextColor='Black';
 var toolTipBorderColor='black';
@@ -3359,7 +3401,7 @@ var toolTipGraphics=null;
  */
 
 function tp_int_getToolTipFontSize() {
-        var scale = (document.rootElement.currentScale);
+        var scale = (svgDocument.rootElement.currentScale);
         return ((toolTipFontSize / scale) + toolTipFontSizeUnit);
     }
 
@@ -3450,7 +3492,7 @@ function tp_removeToolTipText(node) {
 
 function tp_int_createToolTip(evt) {
         
-        var scale = (document.rootElement.currentScale);
+        var scale = (svgDocument.rootElement.currentScale);
         var g = new Graphics(0, 0, 0, 0, toolTipNodeId);
         
         g.setAttribute("pointer-events", "none");
@@ -3496,7 +3538,7 @@ function tp_int_createToolTip(evt) {
 
 function tp_int_mouse_over(evt) {
 
-        var scale = (document.rootElement.currentScale);
+        var scale = (svgDocument.rootElement.currentScale);
 
         // Create the toolTip node once,..
         if (!toolTipMouseOverFlag) {
@@ -3512,8 +3554,8 @@ function tp_int_mouse_over(evt) {
         toolTipGraphics.setVisibility(toolTipOnOffFlag);
         
         // Otherwise move the toolTip
-        var tx = document.rootElement.currentTranslate.x;
-        var ty = document.rootElement.currentTranslate.y;
+        var tx = svgDocument.rootElement.currentTranslate.x;
+        var ty = svgDocument.rootElement.currentTranslate.y;
         var x = ((evt.clientX - tx + 13));
         var y = ((evt.clientY - ty));
         toolTipGraphics.translate(x / scale, y / scale);
@@ -4118,6 +4160,58 @@ ReverseEnumerator.prototype.nextElement = function() {
     // Summary
     // Returns the next element of the enumeration. Calls to this method will enumerate successive elements.
     return this.fEnumeration.nextElement();
+}
+
+/**
+ * Java.js : ReverseVectorEnumerator
+ *
+ * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ * @since     5th January 2005
+ * @package   websemantics/oea/java.js/util
+ */
+
+/**
+ * Class ReverseVectorEnumerator [implementation of Enumeration interface]
+ * 
+ * {Comments are copied from the Java Implementation of HotDraw,..}
+ *
+ * An Enumeration that enumerates a vector back (size-1) to front (0).
+ * 
+ */
+
+ReverseVectorEnumerator.prototype = new Enumeration();
+
+function ReverseVectorEnumerator( /* Vector */ v) { /* implements Enumeration */
+        var argv = ReverseVectorEnumerator.arguments;
+        var argc = ReverseVectorEnumerator.length;
+        this.className = "ReverseVectorEnumerator";
+
+        this.vector = new Vector();
+        this.count = 0;
+
+        if (argv.length > 0) 
+        	this.initReverseVectorEnumerator(v);
+    }
+
+ReverseVectorEnumerator.prototype.initReverseVectorEnumerator = function(v) {
+        this.vector = v;
+        this.count = this.vector.size() - 1;
+    }
+
+ReverseVectorEnumerator.prototype.hasMoreElements = function() {
+    // Summary
+    // Returns true if the Renumeration contains more elements; false if its empty.
+        return this.count >= 0;
+    }
+
+ReverseVectorEnumerator.prototype.nextElement = function() {
+    // Summary
+    // Returns the next element of the Renumeration.
+    if (this.count >= 0) {
+        return this.vector.elementAt(this.count--);
+    }
 }
 
 /**
@@ -8104,6 +8198,9 @@ BoxLayout.prototype.toString = function() {
  * Class Component
  *
  * Comment: Things to look for when the mouse cursor hovers on a component.
+ *
+ * [NEW] 1st May 2015
+ * Support of Spinners (on loading!)
  * 
  * (1) Change the mouse cursor
  * (2) Display Tooltip
@@ -8227,13 +8324,17 @@ function Component(x, y, w, h, name) {
         /* Graphics */
         this.glassPaneg = null;
 
- 				// Number of layered Graphics: children of content Graphics 'g'
+ 		// Number of layered Graphics: children of content Graphics 'g'
         /* int */
         this.layeredGraphicsCount = 0;
 				
-				// A refernce to the Graphics that's used for the Tooltip (root or glass pane)
+		// A refernce to the Graphics that's used for the Tooltip (root or glass pane)
         /* Graphics */
         this.tooltipGraphics = null; 
+
+        /* boolean */
+        this.loading = true;
+        this.spinner = null;
         
         if (argv.length > 0) 
         	this.initComponent(x, y, w, h, name);
@@ -8314,7 +8415,7 @@ Component.prototype.glassPaneOn = function() {
     // Top-level subclass has to put the Glasspane on.
     // Make sure to transfer the tooltip to the glassPaneg
 
-        this.glassPaneg.setBackground("blue");
+        this.glassPaneg.setBackground("#fff");
         this.glassPaneg.backgroundRect.setOpacity(0);
     }
 
@@ -8325,6 +8426,50 @@ Component.prototype.removeGlassPane = function() {
 
         this.glassPaneg.removeBackground();
     }
+
+Component.prototype.showSpinner = function() {
+    // Summary (new 1 may 2015)
+    if(this.spinner == null)
+        this.createSpinnerContent(this.glassPaneg);
+
+    this.spinner.show();
+}
+
+Component.prototype.hideSpinner = function() {
+    // Summary (new 1 may 2015)
+    if(this.spinner)
+        this.spinner.hide();
+}
+
+Component.prototype.createSpinner = function() {
+    // Summary (new 1 may 2015)
+    // Override to change the Spinner settings
+    return new Spinner();
+}
+
+Component.prototype.createSpinnerContent = function(g) {
+    // Summary (new 1 may 2015)
+    // Override to change the Spinner settings
+    if(this.spinner == null)
+         this.spinner = this.createSpinner();
+
+    var x = this.getWidth() / 2 || 0;
+    var y = this.getHeight() / 2 || 0;
+
+    return this.spinner.createSVGContent(x,y,g);
+}
+
+Component.prototype.inProgress = function(yes) {
+    // Summary (new 1 may 2015)
+    // Show/Hide the spinner
+    if(yes){
+        this.showSpinner();
+        this.glassPaneg.backgroundRect.setOpacity(0.5);
+    } else {
+        this.hideSpinner();
+        this.glassPaneg.backgroundRect.setOpacity(0);
+    }
+}
 
 Component.prototype.getGraphics = function() {
     // Summary:
@@ -8602,6 +8747,7 @@ Component.prototype.onResizeComponent = function() {
         // Make neccessary changes on the component content first,...
         if (this.rootg != null) this.rootg.setSize(this.w, this.h);
         if (this.glassPaneg != null) this.glassPaneg.setSize(this.w, this.h);
+        if (this.spinner != null) this.spinner.translate(this.w/2, this.h/2);
     }
 
 Component.prototype.onMove = function() {
@@ -9114,8 +9260,6 @@ Container.prototype.econtMouseStartDragged = function( /* MouseEvent */ e) {
 
 Container.prototype.econtMouseEndDragged = function( /* MouseEvent */ e) {
 
-        this.restoreASVContextMenue(); // <=======[restoreASVContextMenue]
-
         tp_turnToolTipOn(); // <======[ Turn the Tooltip on]
 
         if (this.draggOwner != null) {
@@ -9164,8 +9308,6 @@ Container.prototype.econtMouseEntered = function( /* MouseEvent */ e) {
 
 Container.prototype.econtMouseExited = function( /* MouseEvent */ e) {
         
-        this.restoreASVContextMenue(); // <==========[restoreASVContextMenue]
-
         if (this.moveOwner != null && this.draggOwner == null) {
             d = this.moveOwner;
             this.moveOwner = null;
@@ -9181,8 +9323,6 @@ Container.prototype.econtMouseClicked = function( /* MouseEvent */ e) {
     }
 
 Container.prototype.econtMousePressed = function( /* MouseEvent */ e) {
-
-        this.removeASVContextMenue(); // <==========[removeASVContextMenue]
 
         var d = this.getComponentAt(e.getX(), e.getY());
 
@@ -9217,7 +9357,6 @@ Container.prototype.econtMousePressed = function( /* MouseEvent */ e) {
     }
 
 Container.prototype.econtMouseReleased = function( /* MouseEvent */ e) {
-        this.restoreASVContextMenue(); // <===============[restoreASVContextMenue]
         var d = this.getComponentAt(e.getX(), e.getY())
         if (this.isEventable(d)) this.fireMouseEventToComponent(d, "mouseReleased", e);
     }
@@ -9264,30 +9403,6 @@ Container.prototype.fireMouseMotionEventToComponent = function( /* component */ 
 
         comp.mouseMotionEventHandler(eventType, event);
     }
-    //===================================================================
-    //
-    // Customized methods for Adobe SVG plugin to remove the ContextMenu
-    //
-    //===================================================================
-
-Container.prototype.removeASVContextMenue = function() {
-    // Summary:
-    // Remove ASV context Menue
-
-        if (!contextMenu && contextMenu == undefined) return;
-        if (contextMenu.firstChild && contextMenu.firstChild != null) {
-            this.oldContextMenu = contextMenu.firstChild;
-            contextMenu.removeChild(contextMenu.firstChild);
-        }
-    }
-
-Container.prototype.restoreASVContextMenue = function() {
-    // Summary:
-    // Restore ASV context Menue
-
-    if (contextMenu && contextMenu == undefined || this.oldContextMenu == null) return;
-    if (!contextMenu.firstChild) contextMenu.appendChild(this.oldContextMenu);
-}
 /**
  * Swing.svg : Panel
  *
@@ -9372,6 +9487,7 @@ Panel.prototype.recalcPanel = function() {
  */
 
 function Icon( /* String */ filename, /* int */ w, /* int */ h) {
+    
         var argv = Icon.arguments;
         var argc = Icon.length;
 
@@ -9417,6 +9533,65 @@ Icon.prototype.translate = function(x, y) {
     if (this.iconShape != null) this.iconShape.translate(x, y);
 }
 /**
+ * Swing.svg : Spinner
+ *
+ * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ * @since     1st May 2015
+ * @package   websemantics/oea/swing.svg
+ */
+
+function Spinner(name, w, h, color) {
+    
+        var argv = Spinner.arguments;
+        var argc = Spinner.length;
+
+        /* String */
+        this.className = "Spinner";
+
+        this.name = name || 'tail_spin';
+        this.color = color || '#000';
+        this.w = w || 64;
+        this.h = h || 64;
+        this.spinner = null;
+    }
+
+Spinner.prototype.createSVGContent = function(x,y, /* Graphics */ g) {
+        x = x - this.w / 2;
+        y = y - this.h / 2;
+        this.spinner = g.drawSpinnerImage(x,y, this.w, this.h,this.name,this.color);
+        this.spinner.setOriginToCenter();
+    }
+
+Spinner.prototype.getWidth = function() {
+        if (this.spinner != null) return this.spinner.getWidth();
+        else return 0;
+    }
+
+Spinner.prototype.getHeight = function() {
+        if (this.spinner != null) return this.spinner.getHeight();
+        else return 0;
+    }
+
+Spinner.prototype.translate = function(x, y) {
+    if (this.spinner != null) {
+        x = x - this.w / 2;
+        y = y - this.h / 2;
+        this.spinner.translate(x, y);
+    }
+}
+
+Spinner.prototype.show = function() {
+    if (this.spinner != null) 
+        this.spinner.setVisibility(true);
+}
+
+Spinner.prototype.hide = function() {
+    if (this.spinner != null) 
+        this.spinner.setVisibility(false);
+}
+/**
  * Swing.svg : Label
  *
  * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
@@ -9428,7 +9603,7 @@ Icon.prototype.translate = function(x, y) {
 
 Label.prototype= new Canvas(); 
 
-function Label( /* int */ x, /* int */ y, /* int */ w, /* int */ h, /* String */ name, /* String */ caption, /* Icon */ icon) {
+function Label( /* int */ x, /* int */ y, /* int */ w, /* int */ h, /* String */ name, /* String */ caption, /* Icon */ icon, color) {
         var argv = Label.arguments;
         var argc = Label.length;
 
@@ -9439,7 +9614,7 @@ function Label( /* int */ x, /* int */ y, /* int */ w, /* int */ h, /* String */
         /* String */
         this.caption = null;
         /* Color */
-        this.textColor = "black";
+        this.textColor = color || "black";
         /* int */
         this.align = CENTER;
         /* int */
@@ -9457,12 +9632,16 @@ function Label( /* int */ x, /* int */ y, /* int */ w, /* int */ h, /* String */
         /* int */
         this.textShapeHeight = 0; // The height of the text node,...to be calculated in recalc method
         
+        /* int, x margin */
+        this.margin = 5;
+
         if (argv.length > 0) 
           this.initLabel(x, y, w, h, name, caption, icon);
     }
 
 Label.prototype.initLabel = function(x, y, w, h, name, caption, icon) {
         this.initCanvas(x, y, w, h);
+        
         // left,right,top,bottom 
         this.setInsets(4, 4, 4, 4);
 
@@ -9489,7 +9668,7 @@ Label.prototype.createSVGContentLabel = function() {
 
         if (this.icon != null) {
             this.icon.createSVGContent(this.lg);
-            x += this.icon.w;
+            x += this.icon.w + this.margin;
         }
 
         if (this.caption != null) {
@@ -9526,8 +9705,9 @@ Label.prototype.recalcLabel = function() {
 
         var w = this.w;
         var h = this.h;
+        var margin = (this.icon) ? this.margin : 0;
 
-        this.textShapeWidth = w - this.left - this.right;
+        this.textShapeWidth = w - this.left - this.right - margin;
         this.textShapeHeight = h - this.top - this.bottom;
 
         // Resize the Label to the size of the text
@@ -9539,7 +9719,7 @@ Label.prototype.recalcLabel = function() {
                 w = this.textShapeWidth + this.left + this.right;
                 h = this.textShapeHeight + this.top + this.bottom;
                 if (this.icon != null) {
-                    w += this.icon.getWidth();
+                    w += this.icon.getWidth()+ this.left + this.right;
                     h = Math.max(this.icon.getHeight() + this.top + this.bottom, h);
                 }
             } else
@@ -9547,8 +9727,9 @@ Label.prototype.recalcLabel = function() {
                 w = this.icon.getWidth() + this.left + this.right;
                 h = this.icon.getHeight() + this.top + this.bottom;
             }
-            this.setSize(w, h);
-        } else this.onResizeLabel();
+            this.setSize(w  + margin, h);
+        } else 
+        this.onResizeLabel();
 
     }
 
@@ -9610,7 +9791,7 @@ Label.prototype.positionText = function() {
         }
 
         if (this.textShape != null)
-            this.textShape.translate(x, y);
+            this.textShape.translate(x + ((this.icon)?this.margin:0), y);
 
 
         if (this.icon != null)
@@ -9730,6 +9911,7 @@ Button.prototype.initButton = function( /* int */ x, y, w, h, /* String */ name,
                 h = 0;
             }
         }
+
         this.initLabel(x, y, w, h, name, caption, icon);
         this.buttonSkin = new SimpleButtonSkin();
         this.addMouseListener(this);
@@ -9768,7 +9950,7 @@ Button.prototype.createSVGContentButton = function() {
 
         if (this.icon != null) {
             this.icon.createSVGContent(this.contentg);
-            x += this.icon.w;
+            x += this.icon.w ;
         }
 
         if (this.caption != null) {
@@ -10082,7 +10264,7 @@ RadioButton.prototype.setSelected = function( /* boolean */ selected) {
 
 ButtonGroup.prototype = new Container();
 
-function ButtonGroup( /* int */ x, /* int */ y) {
+function ButtonGroup(x,y, align) {
         var argv = ButtonGroup.arguments;
         var argc = ButtonGroup.length;
         /* String */
@@ -10094,16 +10276,14 @@ function ButtonGroup( /* int */ x, /* int */ y) {
         /* Graphics  */
         this.contentg = null;
 
-        if(argv.length > 0)
-          this.initButtonGroup(x, y);
+        this.initButtonGroup(x, y, align);
     }
 
-ButtonGroup.prototype.initButtonGroup = function(x, y) {
+ButtonGroup.prototype.initButtonGroup = function(x, y, align) {
         
-        if (x == undefined && y == undefined) {
-            x = 0;
-            y = 0;
-        }
+        x = x || 0;
+        y = y || 0;
+        align = align || Y_AXIS;
 
         // The ButtonGroup listens to mouseClick event so it could capture the clicked radio button and update other buttons accordingly,..
         this.addInternalMouseMotionListener(mouseClicked, "buttonGroupMouseClicked");
@@ -10111,7 +10291,7 @@ ButtonGroup.prototype.initButtonGroup = function(x, y) {
         this.setInsets(0, 0, 0, 0); // left,right,top,bottom 
         
         // set the default layout manager,...
-        this.setLayout(new BoxLayout(Y_AXIS, LEFT, TOP, 0));
+        this.setLayout(new BoxLayout(align, LEFT, TOP, 0));
     }
 
 ButtonGroup.prototype.createSVGContent = function() {
@@ -10440,7 +10620,9 @@ TabbedPane.prototype.recalcTabbedPane = function() {
     }
 
 TabbedPane.prototype.addPane = function(name, caption, icon) {
+        
         var b = new Button(0, 0, 0, 0, name, caption, icon);
+        
         b.setFont(this.getFont());
         b.setTextAlign(LEFT, CENTER);
         b.changeSkin(new FlatButtonSkin());
@@ -11082,7 +11264,7 @@ function List( /* int */ x, /* int */ y, /* int */ w, /* int */ h) {
         /* Shape */
         this.border = null;
         /* Color */
-        this.selRectColor = "blue"; // The color of the selected item
+        this.selRectColor = "#3498db"; // The color of the selected item
         /* Component */
         this.highlightedComp = null; // The one which's selected or mouseOver
         
@@ -11451,11 +11633,13 @@ TextBox.prototype= new Canvas(); // Extends EventManager
 function TextBox(x, y, w, h, text, multiLine) {
         var argv = TextBox.arguments;
         var argc = TextBox.length;
-        if (multiLine != undefined) 
-          this.multiLine = multiLine;
-        else
-        /* boolean */ this.multiLine = false;
-
+        /* String */
+        this.className = "TextBox";
+        /* String */
+        this.name = "TextBox";
+        
+        /* boolean */
+        this.multiLine = multiLine || false;
         /* boolean */
         this.passwordMode = false; // display star '*' if this flag is set to true
         /* Char */
@@ -11472,8 +11656,6 @@ function TextBox(x, y, w, h, text, multiLine) {
         this.cursorHeight = 0;
         /* int */
         this.cursorWidth = 1; // The width of char 'i',..changes when the font has changed
-        /* String */
-        this.name = "TextBox";
         /* String */
         this.text = null; // Never change this property directly,... Use setText method
         /* Shape */
@@ -11508,8 +11690,6 @@ function TextBox(x, y, w, h, text, multiLine) {
         /* Boolean */
         this.styledMode = false; // Textbox supports single line in styled mode, with this mode the selection
         // Is done differently using a styled rectangle.
-        /* String */
-        this.className = "TextBox";
         /* boolean */
         this.created = false; // true of the svg content is created (only once).
         
@@ -11605,7 +11785,7 @@ TextBox.prototype.createSVGContentTextBox = function() {
 
         this.cursorShape = cg.drawRect(this.margin, this.margin, 1, this.cursorHeight);
         this.cursorShape.setAttribute('shape-rendering', 'optimizeSpeed'); //shape-rendering( auto | optimizeSpeed | crispEdges | geometricPrecision | inherit )
-        var ani = document.createElementNS("http://www.w3.org/2000/svg", "animate")
+        var ani = svgDocument.createElementNS("http://www.w3.org/2000/svg", "animate")
         ani.setAttribute("attributeName", "visibility")
         ani.setAttribute("values", "visible;hidden;visible")
         ani.setAttribute("begin", "0s")
@@ -11806,7 +11986,7 @@ TextBox.prototype.getCharPosFromXY = function( /* int */ x, /* int */ y) {
 
         y = this.quantizeY(y); // Y is always crosses the middle y axis of a line of chars
 
-        var p = document.documentElement.createSVGPoint();
+        var p = svgDocument.documentElement.createSVGPoint();
         p.x = x;
         p.y = y;
 
@@ -11920,7 +12100,7 @@ TextBox.prototype.moveCursorLeftRight = function( /* int */ inc, /* boolean */ s
 
 TextBox.prototype.moveCursorUpDown = function( /* int */ inc, /* boolean */ shiftDown) {
         var oldCursorCharPos = this.cursorCharPos;
-        var p = document.documentElement.createSVGPoint();
+        var p = svgDocument.documentElement.createSVGPoint();
         p.x = this.cursorX;
         p.y = this.getYPositionOfChar(this.cursorCharPos) + inc;
 
@@ -13092,28 +13272,30 @@ ColorComboBox.prototype.getColor = function() {
 
 Window.prototype= new Panel(); 
 
-function Window(x, y, w, h, title, icon, closeButtonFlag) { // Implements ActionListener
+function Window(x, y, w, h, title, icon, closeButtonFlag, windowSkin) { // Implements ActionListener
         var argv = Window.arguments;
         var argc = Window.length;
 
         /* String   */
         this.name = "Window";
+
         /* String   */
         this.className = "Window";
+
         /* Graphics */
         this.sking = null; // Used by the WindowSkin
         /* Graphics */
         this.contentg = null; // Used to draw the content
         /* WindowSkin */
-        this.windowSkin = null;
+        this.windowSkin = windowSkin || null;
         /* int */
         this.edgeWidth = 5; // Used to change the mouse cursor when it's at the window edges
         /* Boolean */
         this.fixedSize = false; // If true, the window can not be resized
         /* String */
-        this.title = null;
+        this.title = title || "Untitled: ";
         /* icon */
-        this.icon = null;
+        this.icon = icon || null;
         /* int */
         this.titleRectHeight = 18;
         /* int */
@@ -13123,7 +13305,7 @@ function Window(x, y, w, h, title, icon, closeButtonFlag) { // Implements Action
         /* Component */
         this.closeBut = null;
         /* Boolean */
-        this.closeButtonFlag = true; // If true, display close button
+        this.closeButtonFlag = closeButtonFlag || true; // If true, display close button
         /* Boolean */
         this.active = false; // If true, the window is active
         /* int */
@@ -13132,16 +13314,16 @@ function Window(x, y, w, h, title, icon, closeButtonFlag) { // Implements Action
         this.recalcInsets = true; // 
         
         if (argv.length > 0) 
-          this.initWindow(x, y, w, h, title, icon, closeButtonFlag);
+          this.initWindow(x, y, w, h);
     }
 
-Window.prototype.initWindow = function(x, y, w, h, title, icon, closeButtonFlag) {
-        if (closeButtonFlag != undefined) this.closeButtonFlag = closeButtonFlag;
-        if (title == undefined) title = "Untitled: ";
-        this.title = title;
-        if (icon != undefined) this.icon = icon;
-        //this.windowSkin=new SimpleWindowSkin();
-        this.windowSkin = new DefaultWindowSkin();
+Window.prototype.initWindow = function(x, y, w, h) {
+        
+        if (typeof this.icon == 'string' || this.icon instanceof String){
+            this.icon = new Icon(this.icon, 16,16);
+        }
+
+        this.windowSkin =  this.windowSkin || new DefaultWindowSkin(); //  SimpleWindowSkin();                      
         this.enableMouseListener();
         this.enableMouseMotionListener();
         this.addInternalMouseMotionListener(mouseStartDragged, "winMouseStartDragged");
@@ -13194,6 +13376,7 @@ Window.prototype.createSVGContentWindow = function() {
         this.contentg = this.getGraphics();
         this.windowSkin.createSVGContent(this);
         this.paintChildren(this.contentg);
+        
         if (this.closeBut != null) {
             var g = this.closeBut.getGraphics();
             g.setStrokeColor("black");
@@ -13201,6 +13384,7 @@ Window.prototype.createSVGContentWindow = function() {
             this.closeBut.line1 = g.drawLine(0, 0, 0, 0);
             this.closeBut.line2 = g.drawLine(0, 0, 0, 0);
         }
+
         this.glassPaneOn();
         this.enableMouseListener();
         this.enableMouseMotionListener();
@@ -13211,11 +13395,17 @@ Window.prototype.onResize = function() {
     }
 
 Window.prototype.onResizeWindow = function() {
+       
         //this.onResizePanel(); [Skip the Container resize]
-        if (this.w < this.minWidth) this.w = this.minWidth;
-        if (this.h < this.minHeight) this.h = this.minHeight;
+        if (this.w < this.minWidth) 
+            this.w = this.minWidth;
+
+        if (this.h < this.minHeight) 
+            this.h = this.minHeight;
+        
         this.onResizeCanvas();
         this.windowSkin.setSize(this.w, this.h);
+        
         if (this.closeBut != null)
             this.closeBut.setLocation(this.w - this.closeBut.w - this.windowSkin.borderWidth * 2, this.windowSkin.borderWidth * 2);
     }
@@ -13401,8 +13591,8 @@ Window.prototype.winMouseDragged = function( /* MouseEvent */ event) {
 Window.prototype.desktopMouseClick = function(evt) {
         var r = new gRectangle(this.x, this.y, this.w, this.h);
 
-        var matrix = document.rootElement.getScreenCTM();
-        var scale = document.rootElement.currentScale;
+        var matrix = svgDocument.rootElement.getScreenCTM();
+        var scale = svgDocument.rootElement.currentScale;
 
         var x = parseInt((evt.screenX - matrix.e) / scale);
         var y = parseInt((evt.screenY - matrix.f) / scale);
@@ -13440,4 +13630,81 @@ Window.prototype.actionPerformedWindow = function( /* ActionEvent */ e) {
                 break;
         }
     }
+}
+/**
+ * Oea.svg : Launcher
+ *
+ * This is used to launch swing applications,...use callback function
+ * 
+ * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT
+ * @since     9th September 2005
+ * @package   websemantics/oea/tools
+ */
+
+Launcher.prototype = new Window();
+
+function Launcher( /* String */ title, /* String */ callback) {
+    var argv = Launcher.arguments;
+    var argc = Launcher.length;
+    this.className = "Launcher";
+
+    /* int */
+    this.defaultW = 325;
+    /* int */
+    this.defaultH = 70;
+    /* Function */
+    this.callback = null;
+    
+    if (argv.length > 0) 
+    	this.initLauncher(title, callback);
+}
+//*************
+// initLauncher 
+//*************
+Launcher.prototype.initLauncher = function( /* String */ title, /* String */ callback) {
+    var x = (innerWidth - this.defaultW) / 2;
+    var y = (innerHeight - this.defaultH) / 2;
+    // Initilize the super class : Window
+    this.initWindow(x, y, this.defaultW, this.defaultH, title, null, false);
+    this.setToFixedSize();
+    this.setLayout(new FlowLayout(CENTER, 5, 5));
+    var button = new Button(0, 0, 64, 30, "load", "");
+    button.setResizeToText(false);
+    this.setCallback(callback);
+    button.addActionListener(this);
+    this.add(button);
+    this.paint();
+    button.contentg.setFont(new Font("Helvetica", "normal", "10pt"));
+    button.contentg.drawText(9, 20, "Load,..");
+    this.recalc();
+}
+//*************
+// actionPerformed 
+//*************
+Launcher.prototype.setCallback = function( /* String */ cb) {
+    this.callback = cb;
+}
+//*************
+// actionPerformed 
+//*************
+Launcher.prototype.actionPerformed = function( /* ActionEvent */ e) {
+    this.actionPerformedLauncher(e);
+}
+//*************
+// actionPerformedLauncher 
+//*************
+Launcher.prototype.actionPerformedLauncher = function( /* ActionEvent */ e) {
+    this.actionPerformedWindow(e);
+    var src = e.source;
+    var comm = e.getActionCommand();
+    if (comm == "buttonClicked") {
+        switch (src.name) {
+            case "load":
+                if (this.callback != null) this.callback();
+                break;
+        }
+    }
+    this.dispose();
 }

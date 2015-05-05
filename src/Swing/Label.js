@@ -10,7 +10,7 @@
 
 Label.prototype= new Canvas(); 
 
-function Label( /* int */ x, /* int */ y, /* int */ w, /* int */ h, /* String */ name, /* String */ caption, /* Icon */ icon) {
+function Label( /* int */ x, /* int */ y, /* int */ w, /* int */ h, /* String */ name, /* String */ caption, /* Icon */ icon, color) {
         var argv = Label.arguments;
         var argc = Label.length;
 
@@ -21,7 +21,7 @@ function Label( /* int */ x, /* int */ y, /* int */ w, /* int */ h, /* String */
         /* String */
         this.caption = null;
         /* Color */
-        this.textColor = "black";
+        this.textColor = color || "black";
         /* int */
         this.align = CENTER;
         /* int */
@@ -39,12 +39,16 @@ function Label( /* int */ x, /* int */ y, /* int */ w, /* int */ h, /* String */
         /* int */
         this.textShapeHeight = 0; // The height of the text node,...to be calculated in recalc method
         
+        /* int, x margin */
+        this.margin = 5;
+
         if (argv.length > 0) 
           this.initLabel(x, y, w, h, name, caption, icon);
     }
 
 Label.prototype.initLabel = function(x, y, w, h, name, caption, icon) {
         this.initCanvas(x, y, w, h);
+        
         // left,right,top,bottom 
         this.setInsets(4, 4, 4, 4);
 
@@ -71,7 +75,7 @@ Label.prototype.createSVGContentLabel = function() {
 
         if (this.icon != null) {
             this.icon.createSVGContent(this.lg);
-            x += this.icon.w;
+            x += this.icon.w + this.margin;
         }
 
         if (this.caption != null) {
@@ -108,8 +112,9 @@ Label.prototype.recalcLabel = function() {
 
         var w = this.w;
         var h = this.h;
+        var margin = (this.icon) ? this.margin : 0;
 
-        this.textShapeWidth = w - this.left - this.right;
+        this.textShapeWidth = w - this.left - this.right - margin;
         this.textShapeHeight = h - this.top - this.bottom;
 
         // Resize the Label to the size of the text
@@ -121,7 +126,7 @@ Label.prototype.recalcLabel = function() {
                 w = this.textShapeWidth + this.left + this.right;
                 h = this.textShapeHeight + this.top + this.bottom;
                 if (this.icon != null) {
-                    w += this.icon.getWidth();
+                    w += this.icon.getWidth()+ this.left + this.right;
                     h = Math.max(this.icon.getHeight() + this.top + this.bottom, h);
                 }
             } else
@@ -129,8 +134,9 @@ Label.prototype.recalcLabel = function() {
                 w = this.icon.getWidth() + this.left + this.right;
                 h = this.icon.getHeight() + this.top + this.bottom;
             }
-            this.setSize(w, h);
-        } else this.onResizeLabel();
+            this.setSize(w  + margin, h);
+        } else 
+        this.onResizeLabel();
 
     }
 
@@ -192,7 +198,7 @@ Label.prototype.positionText = function() {
         }
 
         if (this.textShape != null)
-            this.textShape.translate(x, y);
+            this.textShape.translate(x + ((this.icon)?this.margin:0), y);
 
 
         if (this.icon != null)

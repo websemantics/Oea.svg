@@ -72,6 +72,7 @@ Button.prototype.initButton = function( /* int */ x, y, w, h, /* String */ name,
                 h = 0;
             }
         }
+
         this.initLabel(x, y, w, h, name, caption, icon);
         this.buttonSkin = new SimpleButtonSkin();
         this.addMouseListener(this);
@@ -110,7 +111,7 @@ Button.prototype.createSVGContentButton = function() {
 
         if (this.icon != null) {
             this.icon.createSVGContent(this.contentg);
-            x += this.icon.w;
+            x += this.icon.w ;
         }
 
         if (this.caption != null) {

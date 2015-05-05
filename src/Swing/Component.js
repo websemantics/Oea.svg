@@ -12,6 +12,9 @@
  * Class Component
  *
  * Comment: Things to look for when the mouse cursor hovers on a component.
+ *
+ * [NEW] 1st May 2015
+ * Support of Spinners (on loading!)
  * 
  * (1) Change the mouse cursor
  * (2) Display Tooltip
@@ -135,13 +138,17 @@ function Component(x, y, w, h, name) {
         /* Graphics */
         this.glassPaneg = null;
 
- 				// Number of layered Graphics: children of content Graphics 'g'
+ 		// Number of layered Graphics: children of content Graphics 'g'
         /* int */
         this.layeredGraphicsCount = 0;
 				
-				// A refernce to the Graphics that's used for the Tooltip (root or glass pane)
+		// A refernce to the Graphics that's used for the Tooltip (root or glass pane)
         /* Graphics */
         this.tooltipGraphics = null; 
+
+        /* boolean */
+        this.loading = true;
+        this.spinner = null;
         
         if (argv.length > 0) 
         	this.initComponent(x, y, w, h, name);
@@ -222,7 +229,7 @@ Component.prototype.glassPaneOn = function() {
     // Top-level subclass has to put the Glasspane on.
     // Make sure to transfer the tooltip to the glassPaneg
 
-        this.glassPaneg.setBackground("blue");
+        this.glassPaneg.setBackground("#fff");
         this.glassPaneg.backgroundRect.setOpacity(0);
     }
 
@@ -233,6 +240,50 @@ Component.prototype.removeGlassPane = function() {
 
         this.glassPaneg.removeBackground();
     }
+
+Component.prototype.showSpinner = function() {
+    // Summary (new 1 may 2015)
+    if(this.spinner == null)
+        this.createSpinnerContent(this.glassPaneg);
+
+    this.spinner.show();
+}
+
+Component.prototype.hideSpinner = function() {
+    // Summary (new 1 may 2015)
+    if(this.spinner)
+        this.spinner.hide();
+}
+
+Component.prototype.createSpinner = function() {
+    // Summary (new 1 may 2015)
+    // Override to change the Spinner settings
+    return new Spinner();
+}
+
+Component.prototype.createSpinnerContent = function(g) {
+    // Summary (new 1 may 2015)
+    // Override to change the Spinner settings
+    if(this.spinner == null)
+         this.spinner = this.createSpinner();
+
+    var x = this.getWidth() / 2 || 0;
+    var y = this.getHeight() / 2 || 0;
+
+    return this.spinner.createSVGContent(x,y,g);
+}
+
+Component.prototype.inProgress = function(yes) {
+    // Summary (new 1 may 2015)
+    // Show/Hide the spinner
+    if(yes){
+        this.showSpinner();
+        this.glassPaneg.backgroundRect.setOpacity(0.5);
+    } else {
+        this.hideSpinner();
+        this.glassPaneg.backgroundRect.setOpacity(0);
+    }
+}
 
 Component.prototype.getGraphics = function() {
     // Summary:
@@ -510,6 +561,7 @@ Component.prototype.onResizeComponent = function() {
         // Make neccessary changes on the component content first,...
         if (this.rootg != null) this.rootg.setSize(this.w, this.h);
         if (this.glassPaneg != null) this.glassPaneg.setSize(this.w, this.h);
+        if (this.spinner != null) this.spinner.translate(this.w/2, this.h/2);
     }
 
 Component.prototype.onMove = function() {

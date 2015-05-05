@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<head>
+    <head>
+        <title>Oea.svg : Draw2D Example</title>
+        <style type="text/css">
+            html, body {
+            margin:0px;
+            padding:0px;
+            height:100%;
+            min-height:100%;
+            }
+            object {
+            width:100%;
+            height:100%;
+            }
+        </style>
+        <script type="text/javascript"  src="../../dist/oea.svg.js"></script>
+        <script>
+        window.onload = function () {
+        svgDocument = document.getElementById("svgObject").contentDocument;
+
+        // Initilized all the packages [SvgDraw2d and SvgSwing]
+        initialise();
+        
+        // Get the default Desktop
+        var desktop = ds_getDesktop();
+        desktop.setColor("#95a5a6");
+        var dx=20;
+        var dy=20;
+        var x=dx;
+        var y=dy;
+        var w=200;
+        var h=200;
+        var bgc="white";
+
+        // ***** (1) Top left Graphics *****
+        var g=new Graphics(x,y,w,h);
+        g.setBackground(bgc);
+        g.setColor("#DDB4C3");
+        g.setStrokeColor("#7F1C46");
+        g.setStrokeWidth(2);
+        // Oval shape
+        g.drawOval(10,10,25,25);
+        g.setColor("#BEAED4");
+        g.setStrokeColor("black");
+        
+        // Round rectanlge shape
+        g.drawRoundRect(55,-10,50,50,7,7);
+        g.setColor("#ABCEC8");
+        g.setStrokeColor("#005758");
+        
+        // Rectanlge shape
+        var rect=g.drawRect(20,25,50,50);
+        
+        // Set the cursor to 'crosshair'
+        rect.setCursor("crosshair");
+        
+        // Image shape
+        var image=g.drawImage(80,30,100,68,"../../img/cake.png");
+        
+        // Set the tool tip to something
+        image.setToolTipText("Cake! I love cake");
+        g.setColor("#FF7700");
+        g.setStrokeColor("none");
+        g.setStrokeWidth(2);
+
+        // Path shape
+        g.drawPath(15,165,"M0,1.265c9.208,11.949,25.065,13.006,39.005,11.95c16.896-1.28,33.138-6.574,49.947-8.415c20.359-2.229,40.644,1.048,59.361,9.274c18.545,8.151,34.928,20.642,50.509,33.392c0.989,0.81,2.413-0.597,1.414-1.414 c-14.705-12.033-29.972-23.543-47.098-31.932c-16.585-8.123-34.637-12.187-53.092-11.995c-16.98,0.176-33.211,4.975-49.843,7.7c-15.728,2.578-37.472,4.709-48.476-9.571C0.951-0.75-0.788,0.243,0,1.265z");
+
+        // Change the defualt font of Graphics
+        g.setFont(new Font("Helvetica","bold","14"));
+        g.setColor("black");
+
+        // Text shape
+        g.drawText(15,150,"My career is at a crossroads.");
+
+        // ***** (2) Top right Graphics *****
+        g=new Graphics(x+(dx*2)+w,y,w,h);
+        g.setBackground(bgc);
+        g.setColor("#DDB4C3");
+        g.setStrokeColor("#7F1C46");
+        g.setStrokeWidth(2);
+        g.drawOval(10,10,25,25);
+        g.setColor("#BEAED4");
+        g.setStrokeColor("black");
+        g.drawRoundRect(55,-10,50,50,7,7);
+        g.setColor("#ABCEC8");
+        g.setStrokeColor("#005758");
+        g.drawRect(20,25,50,50);
+        
+        // Image and rotate by 45 degree
+        var image=g.drawImage(80,30,100,68,"../../img/cake.png");
+        image.rotate(45);
+        
+        // Then translate to 125,25
+        image.translate(125,25);
+        g.setColor("#FF7700");
+        g.setStrokeColor("none");
+        g.setStrokeWidth(2);
+        
+        // Keep Path object in a variable
+        var path=g.drawPath(0,0,"M0,1.265c9.208,11.949,25.065,13.006,39.005,11.95c16.896-1.28,33.138-6.574,49.947-8.415c20.359-2.229,40.644,1.048,59.361,9.274c18.545,8.151,34.928,20.642,50.509,33.392c0.989,0.81,2.413-0.597,1.414-1.414 c-14.705-12.033-29.972-23.543-47.098-31.932c-16.585-8.123-34.637-12.187-53.092-11.995c-16.98,0.176-33.211,4.975-49.843,7.7c-15.728,2.578-37.472,4.709-48.476-9.571C0.951-0.75-0.788,0.243,0,1.265z");
+        g.setFont(new Font("Helvetica","bold","14"));
+        g.setColor("black");
+        var text=g.drawText(15,150,"My career is at a crossroads.");
+        
+        // Set text path of text to the path object
+        text.setTextPath(path);
+        
+        // Turn clip on of Graphics
+        g.setClipOn();
+        
+        // Rotate Graphics by -25
+        g.rotate(-25);
+        g.translate(g.x-50,g.y);
+        
+        // Scale down to 0.8
+        g.scale(0.8);
+        // Change opacity
+        g.setOpacity(0.75);
+
+        // ***** (3) Bottom left *****
+        g=new Graphics(x,y+(dy*2)+h,w,h);
+        g.setBackground(bgc);
+        g.setColor("none");
+        g.setStrokeWidth(1);
+        g.setStrokeColor("black");
+        
+        // Path shape (3D shape)
+        var _3d=g.drawPath(10,10,"M28.4,62.375V9.725H0.5v52.65h27.9z M37.625,53.15V0.5H9.726v52.65h27.899z M9.726,0.5L0.5,9.725 M37.625,0.5L28.4,9.725 M37.625,53.15L28.4,62.375 M9.726,53.15L0.5,62.375");
+        _3d.setToolTipText("3D Object using path primitive");
+        g.setColor("#73B218");
+        g.setStrokeColor("none");
+        
+        // Star shape
+        path = g.drawPath(140,10,"M22.21,9.353l-8.541,5.158l-1.667,9.041l-3.546-5.86L0,22.719l6.321-8.678L2.702,8.043l7.506,0.479L16.377,0l-1.67,8.81l7.503,0.543z");
+        path.scale(2.5);
+        g.setColor("#F5A11C");
+        g.setStrokeColor("none");
+        
+        // Pyramid shape
+        g.drawPolygon(75,10,[24.589,0,42.152],[0,49.816,56.203]);
+        g.setColor("#666666");
+        g.drawPolygon(75,10,[24.589,48.858   ,42.152],[0,31.614,56.203]);
+
+        // TextView shape
+        g.drawText(10,90,"TextView: Main purpose of this JavaScript package (svgDraw2D) is to allow programmers to draw on the SVG document at run-time.");
+
+        // ***** (4) Bottom right *****
+        g=new Graphics(x+(dx*2)+w,y+(dy*2)+h,w,h);
+        g.setBackground(bgc);
+        g.setColor("none");
+        g.setStrokeWidth(1);
+        g.setStrokeColor("black");
+        var _3d=g.drawPath(50,10,"M28.4,62.375V9.725H0.5v52.65h27.9z M37.625,53.15V0.5H9.726v52.65h27.899z M9.726,0.5L0.5,9.725 M37.625,0.5L28.4,9.725 M37.625,53.15L28.4,62.375 M9.726,53.15L0.5,62.375");
+        
+        // Scale down
+        _3d.scale(0.5);
+        
+        // Rotate 90 degree
+        _3d.rotate(90);
+        g.setColor("#73B218");
+        g.setStrokeColor("none");
+
+        // Star
+        var star=g.drawPath(140,10,"M22.21,9.353l-8.541,5.158l-1.667,9.041l-3.546-5.86L0,22.719l6.321-8.678L2.702,8.043l7.506,0.479L16.377,0l-1.67,8.81l7.503,0.543z");
+        g.setColor("#F5A11C");
+        g.setStrokeColor("none");
+        var p1=g.drawPolygon(75,10,[24.589,0,42.152],[0,49.816,56.203]);
+        p1.scale(1.7);
+        g.setColor("#666666");
+        var p2=g.drawPolygon(75,10,[24.589,48.858   ,42.152],[0,31.614,56.203]);
+        p2.scale(1.7);
+        var tv=g.drawText(10,90,"Main purpose of this JavaScript package (svgDraw2D) is to allow programmers to draw on the SVG document at run-time.");
+        tv.rotate(20);
+        tv.translate(30,90);
+        g.setClipOn();
+        }
+        </script>
+    </head>
+    <body>
+        <object id="svgObject" type="image/svg+xml" data="../blank/image.svg">
+        Your browser doesn't support SVG
+        </object>
+    </body>
+</head>

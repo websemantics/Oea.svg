@@ -9,6 +9,7 @@
  */
 
 function Icon( /* String */ filename, /* int */ w, /* int */ h) {
+    
         var argv = Icon.arguments;
         var argc = Icon.length;
 

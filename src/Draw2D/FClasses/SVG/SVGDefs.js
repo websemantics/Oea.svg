@@ -34,5 +34,5 @@ function df_addToDefs(node){
 	if(defsNode != null && !defsNode.addChild) 
 		defsNode.appendChild(node);
 	 else 
-	 defsNode.addChild(node); // <= does not work with older plug-in (ver 3)
+	 	defsNode.addChild(node); // <= does not work with older plug-in (ver 3)
 }

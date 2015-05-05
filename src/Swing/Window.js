@@ -10,28 +10,30 @@
 
 Window.prototype= new Panel(); 
 
-function Window(x, y, w, h, title, icon, closeButtonFlag) { // Implements ActionListener
+function Window(x, y, w, h, title, icon, closeButtonFlag, windowSkin) { // Implements ActionListener
         var argv = Window.arguments;
         var argc = Window.length;
 
         /* String   */
         this.name = "Window";
+
         /* String   */
         this.className = "Window";
+
         /* Graphics */
         this.sking = null; // Used by the WindowSkin
         /* Graphics */
         this.contentg = null; // Used to draw the content
         /* WindowSkin */
-        this.windowSkin = null;
+        this.windowSkin = windowSkin || null;
         /* int */
         this.edgeWidth = 5; // Used to change the mouse cursor when it's at the window edges
         /* Boolean */
         this.fixedSize = false; // If true, the window can not be resized
         /* String */
-        this.title = null;
+        this.title = title || "Untitled: ";
         /* icon */
-        this.icon = null;
+        this.icon = icon || null;
         /* int */
         this.titleRectHeight = 18;
         /* int */
@@ -41,7 +43,7 @@ function Window(x, y, w, h, title, icon, closeButtonFlag) { // Implements Action
         /* Component */
         this.closeBut = null;
         /* Boolean */
-        this.closeButtonFlag = true; // If true, display close button
+        this.closeButtonFlag = closeButtonFlag || true; // If true, display close button
         /* Boolean */
         this.active = false; // If true, the window is active
         /* int */
@@ -50,16 +52,16 @@ function Window(x, y, w, h, title, icon, closeButtonFlag) { // Implements Action
         this.recalcInsets = true; // 
         
         if (argv.length > 0) 
-          this.initWindow(x, y, w, h, title, icon, closeButtonFlag);
+          this.initWindow(x, y, w, h);
     }
 
-Window.prototype.initWindow = function(x, y, w, h, title, icon, closeButtonFlag) {
-        if (closeButtonFlag != undefined) this.closeButtonFlag = closeButtonFlag;
-        if (title == undefined) title = "Untitled: ";
-        this.title = title;
-        if (icon != undefined) this.icon = icon;
-        //this.windowSkin=new SimpleWindowSkin();
-        this.windowSkin = new DefaultWindowSkin();
+Window.prototype.initWindow = function(x, y, w, h) {
+        
+        if (typeof this.icon == 'string' || this.icon instanceof String){
+            this.icon = new Icon(this.icon, 16,16);
+        }
+
+        this.windowSkin =  this.windowSkin || new DefaultWindowSkin(); //  SimpleWindowSkin();                      
         this.enableMouseListener();
         this.enableMouseMotionListener();
         this.addInternalMouseMotionListener(mouseStartDragged, "winMouseStartDragged");
@@ -112,6 +114,7 @@ Window.prototype.createSVGContentWindow = function() {
         this.contentg = this.getGraphics();
         this.windowSkin.createSVGContent(this);
         this.paintChildren(this.contentg);
+        
         if (this.closeBut != null) {
             var g = this.closeBut.getGraphics();
             g.setStrokeColor("black");
@@ -119,6 +122,7 @@ Window.prototype.createSVGContentWindow = function() {
             this.closeBut.line1 = g.drawLine(0, 0, 0, 0);
             this.closeBut.line2 = g.drawLine(0, 0, 0, 0);
         }
+
         this.glassPaneOn();
         this.enableMouseListener();
         this.enableMouseMotionListener();
@@ -129,11 +133,17 @@ Window.prototype.onResize = function() {
     }
 
 Window.prototype.onResizeWindow = function() {
+       
         //this.onResizePanel(); [Skip the Container resize]
-        if (this.w < this.minWidth) this.w = this.minWidth;
-        if (this.h < this.minHeight) this.h = this.minHeight;
+        if (this.w < this.minWidth) 
+            this.w = this.minWidth;
+
+        if (this.h < this.minHeight) 
+            this.h = this.minHeight;
+        
         this.onResizeCanvas();
         this.windowSkin.setSize(this.w, this.h);
+        
         if (this.closeBut != null)
             this.closeBut.setLocation(this.w - this.closeBut.w - this.windowSkin.borderWidth * 2, this.windowSkin.borderWidth * 2);
     }
@@ -319,8 +329,8 @@ Window.prototype.winMouseDragged = function( /* MouseEvent */ event) {
 Window.prototype.desktopMouseClick = function(evt) {
         var r = new gRectangle(this.x, this.y, this.w, this.h);
 
-        var matrix = document.rootElement.getScreenCTM();
-        var scale = document.rootElement.currentScale;
+        var matrix = svgDocument.rootElement.getScreenCTM();
+        var scale = svgDocument.rootElement.currentScale;
 
         var x = parseInt((evt.screenX - matrix.e) / scale);
         var y = parseInt((evt.screenY - matrix.f) / scale);

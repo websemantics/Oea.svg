@@ -24,19 +24,19 @@ var Native      = 2;
  * working under SVG (Batik / ASV) or HTML environment (Native) 
  * functions. 
  */
-var viewerMode  = -1;
+var viewerMode  = Native;
 
 /**
- * Ref to the document object
+ * Ref to the document object / use document as default for running inside SVG
+ * This can be set to the svg object when window.onload event!
  */
+
 var svgDocument = document;
-var svgObjectId = 'svgObject';
 
 function initialise() {
 
-    // Find out which SVG viewer is running? (Batik or ASV)
-    if (svgDocument.documentElement.viewport) {
-        viewerMode = Batik;
+    if (viewerMode == Batik) {
+
         // Correct a bug []
         VK_ENTER = 10; // for ASV it is 13!
         // Fix some shortages of Batik [ set variables innerWidth and innerHeight and define function printNode]
@@ -44,18 +44,11 @@ function initialise() {
         // window.innerHeight=svgDocument.documentElement.viewport.getHeight();
         window.contextMenu = null;
         window.printNode = printXMLNode // (find it at: src/svgDraw2d/FClasses/SVG/SvgUtilities.js);
-    } else
-        viewerMode = ASV;
-   
-    // Added on 29 April 2015, assume SVG native browser support!
-    viewerMode = Native;
-
-    // If running in html document, get the SVG Object
-    if(viewerMode == Native){
-        var graphic = document.getElementById(svgObjectId);
-        svgDocument = graphic.contentDocument;
-    }
+    } 
 
     initDraw2D();
     initSwing();
 }
+
+
+

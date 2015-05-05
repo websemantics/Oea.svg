@@ -145,7 +145,9 @@ TabbedPane.prototype.recalcTabbedPane = function() {
     }
 
 TabbedPane.prototype.addPane = function(name, caption, icon) {
+        
         var b = new Button(0, 0, 0, 0, name, caption, icon);
+        
         b.setFont(this.getFont());
         b.setTextAlign(LEFT, CENTER);
         b.changeSkin(new FlatButtonSkin());

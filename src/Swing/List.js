@@ -27,7 +27,7 @@ function List( /* int */ x, /* int */ y, /* int */ w, /* int */ h) {
         /* Shape */
         this.border = null;
         /* Color */
-        this.selRectColor = "blue"; // The color of the selected item
+        this.selRectColor = "#3498db"; // The color of the selected item
         /* Component */
         this.highlightedComp = null; // The one which's selected or mouseOver
         

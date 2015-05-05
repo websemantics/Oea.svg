@@ -10,7 +10,7 @@
 
 ButtonGroup.prototype = new Container();
 
-function ButtonGroup( /* int */ x, /* int */ y) {
+function ButtonGroup(x,y, align) {
         var argv = ButtonGroup.arguments;
         var argc = ButtonGroup.length;
         /* String */
@@ -22,16 +22,14 @@ function ButtonGroup( /* int */ x, /* int */ y) {
         /* Graphics  */
         this.contentg = null;
 
-        if(argv.length > 0)
-          this.initButtonGroup(x, y);
+        this.initButtonGroup(x, y, align);
     }
 
-ButtonGroup.prototype.initButtonGroup = function(x, y) {
+ButtonGroup.prototype.initButtonGroup = function(x, y, align) {
         
-        if (x == undefined && y == undefined) {
-            x = 0;
-            y = 0;
-        }
+        x = x || 0;
+        y = y || 0;
+        align = align || Y_AXIS;
 
         // The ButtonGroup listens to mouseClick event so it could capture the clicked radio button and update other buttons accordingly,..
         this.addInternalMouseMotionListener(mouseClicked, "buttonGroupMouseClicked");
@@ -39,7 +37,7 @@ ButtonGroup.prototype.initButtonGroup = function(x, y) {
         this.setInsets(0, 0, 0, 0); // left,right,top,bottom 
         
         // set the default layout manager,...
-        this.setLayout(new BoxLayout(Y_AXIS, LEFT, TOP, 0));
+        this.setLayout(new BoxLayout(align, LEFT, TOP, 0));
     }
 
 ButtonGroup.prototype.createSVGContent = function() {

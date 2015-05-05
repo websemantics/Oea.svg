@@ -58,6 +58,7 @@ module.exports = function(grunt) {
                     "./src/Draw2d/Shapes/Text.js",
                     "./src/Draw2d/Shapes/TextView.js",
                     "./src/Draw2d/Shapes/Image.js",
+                    "./src/Draw2d/Shapes/SpinnerImage.js",
                     "./src/Draw2d/Cursor/Cursor.js",
                     "./src/Draw2d/ToolTip/ToolTip.js",
                     "./src/Java/Util/Vector.js",
@@ -67,6 +68,7 @@ module.exports = function(grunt) {
                     "./src/Java/Util/Enumeration.js",
                     "./src/Java/Util/Enumerator.js",
                     "./src/Java/Util/ReverseEnumerator.js",
+                    "./src/Java/Util/ReverseVectorEnumerator.js",
                     "./src/Java/AWT/Geom/Point2D.js",
                     "./src/Java/AWT/Geom/Point.js",
                     "./src/Java/AWT/Geom/Dimension2D.js",
@@ -101,6 +103,7 @@ module.exports = function(grunt) {
                     "./src/Swing/Container.js",
                     "./src/Swing/Panel.js",
                     "./src/Swing/Icon.js",
+                    "./src/Swing/Spinner.js",
                     "./src/Swing/Label.js",
                     "./src/Swing/Button.js",
                     "./src/Swing/CheckBox.js",
@@ -118,6 +121,7 @@ module.exports = function(grunt) {
                     "./src/Swing/Spin.js",
                     "./src/Swing/ColorComboBox.js",
                     "./src/Swing/Window.js",
+                    "./src/Tools/Launcher.js",
                 ]
             }
         }

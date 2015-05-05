@@ -22,7 +22,7 @@ var toolTipNode=null;
 var toolTipNodeId="ToolTip";
 var toolTipFontSize=9;
 var toolTipFontSizeUnit='pt';
-var toolTipFontName='Aril';
+var toolTipFontName='Helvetica';
 var toolTipFontStyle='normal';
 var toolTipTextColor='Black';
 var toolTipBorderColor='black';
@@ -44,7 +44,7 @@ var toolTipGraphics=null;
  */
 
 function tp_int_getToolTipFontSize() {
-        var scale = (document.rootElement.currentScale);
+        var scale = (svgDocument.rootElement.currentScale);
         return ((toolTipFontSize / scale) + toolTipFontSizeUnit);
     }
 
@@ -135,7 +135,7 @@ function tp_removeToolTipText(node) {
 
 function tp_int_createToolTip(evt) {
         
-        var scale = (document.rootElement.currentScale);
+        var scale = (svgDocument.rootElement.currentScale);
         var g = new Graphics(0, 0, 0, 0, toolTipNodeId);
         
         g.setAttribute("pointer-events", "none");
@@ -181,7 +181,7 @@ function tp_int_createToolTip(evt) {
 
 function tp_int_mouse_over(evt) {
 
-        var scale = (document.rootElement.currentScale);
+        var scale = (svgDocument.rootElement.currentScale);
 
         // Create the toolTip node once,..
         if (!toolTipMouseOverFlag) {
@@ -197,8 +197,8 @@ function tp_int_mouse_over(evt) {
         toolTipGraphics.setVisibility(toolTipOnOffFlag);
         
         // Otherwise move the toolTip
-        var tx = document.rootElement.currentTranslate.x;
-        var ty = document.rootElement.currentTranslate.y;
+        var tx = svgDocument.rootElement.currentTranslate.x;
+        var ty = svgDocument.rootElement.currentTranslate.y;
         var x = ((evt.clientX - tx + 13));
         var y = ((evt.clientY - ty));
         toolTipGraphics.translate(x / scale, y / scale);

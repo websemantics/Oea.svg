@@ -91,11 +91,13 @@ TextBox.prototype= new Canvas(); // Extends EventManager
 function TextBox(x, y, w, h, text, multiLine) {
         var argv = TextBox.arguments;
         var argc = TextBox.length;
-        if (multiLine != undefined) 
-          this.multiLine = multiLine;
-        else
-        /* boolean */ this.multiLine = false;
-
+        /* String */
+        this.className = "TextBox";
+        /* String */
+        this.name = "TextBox";
+        
+        /* boolean */
+        this.multiLine = multiLine || false;
         /* boolean */
         this.passwordMode = false; // display star '*' if this flag is set to true
         /* Char */
@@ -112,8 +114,6 @@ function TextBox(x, y, w, h, text, multiLine) {
         this.cursorHeight = 0;
         /* int */
         this.cursorWidth = 1; // The width of char 'i',..changes when the font has changed
-        /* String */
-        this.name = "TextBox";
         /* String */
         this.text = null; // Never change this property directly,... Use setText method
         /* Shape */
@@ -148,8 +148,6 @@ function TextBox(x, y, w, h, text, multiLine) {
         /* Boolean */
         this.styledMode = false; // Textbox supports single line in styled mode, with this mode the selection
         // Is done differently using a styled rectangle.
-        /* String */
-        this.className = "TextBox";
         /* boolean */
         this.created = false; // true of the svg content is created (only once).
         
@@ -245,7 +243,7 @@ TextBox.prototype.createSVGContentTextBox = function() {
 
         this.cursorShape = cg.drawRect(this.margin, this.margin, 1, this.cursorHeight);
         this.cursorShape.setAttribute('shape-rendering', 'optimizeSpeed'); //shape-rendering( auto | optimizeSpeed | crispEdges | geometricPrecision | inherit )
-        var ani = document.createElementNS("http://www.w3.org/2000/svg", "animate")
+        var ani = svgDocument.createElementNS("http://www.w3.org/2000/svg", "animate")
         ani.setAttribute("attributeName", "visibility")
         ani.setAttribute("values", "visible;hidden;visible")
         ani.setAttribute("begin", "0s")
@@ -446,7 +444,7 @@ TextBox.prototype.getCharPosFromXY = function( /* int */ x, /* int */ y) {
 
         y = this.quantizeY(y); // Y is always crosses the middle y axis of a line of chars
 
-        var p = document.documentElement.createSVGPoint();
+        var p = svgDocument.documentElement.createSVGPoint();
         p.x = x;
         p.y = y;
 
@@ -560,7 +558,7 @@ TextBox.prototype.moveCursorLeftRight = function( /* int */ inc, /* boolean */ s
 
 TextBox.prototype.moveCursorUpDown = function( /* int */ inc, /* boolean */ shiftDown) {
         var oldCursorCharPos = this.cursorCharPos;
-        var p = document.documentElement.createSVGPoint();
+        var p = svgDocument.documentElement.createSVGPoint();
         p.x = this.cursorX;
         p.y = this.getYPositionOfChar(this.cursorCharPos) + inc;
 
