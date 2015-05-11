@@ -2,6 +2,10 @@
 
 SVG GUI and Graphics Library built after Java AWT. The Oea Framework provides three Javascript libraries, 1- Java.js, 2- Draw2D.svg and 3- Swing.svg to build SVG GUI applications.
 
+![Calc](https://raw.githubusercontent.com/websemantics/Oea.svg/master/img/screens/calc.png)
+
+[Live Demo](http://oeasvg.com)
+
 ## Java.js
 
 This package container a number of core Java classes that was required to implement both, Draw2D.svg and Swing.svg. Two Java packages have been ported, AWT and Util. AWT classes included Event and Geom namespaces while Util package included generic classes such as Hastable, Vector, Enumeration and many other useful code.
@@ -9,6 +13,8 @@ This package container a number of core Java classes that was required to implem
 ## Draw2D.svg
 
 The svgDraw2D package is written for SVG in JavaScript to decouple the manipulation of DOM/SVG interfaces from writing graphics applications. The package provides a higher level of abstraction to JavaScript developers to manipulate graphics independently from the DOM API. It also provides capabilities for drawing sophisticated two-dimensional shapes, working with fonts, text and text layout, controlling colours; and it features layering management, styled tool tips and desktop canvas. The work on the svgDraw2D package was inspired by the Java AWT package.
+
+![Draw2D.svg](https://raw.githubusercontent.com/websemantics/Oea.svg/master/img/screens/draw2d.png)
 
 ## Swing.svg
 
@@ -22,4 +28,8 @@ Button class handles AWT-like events generated from an indirect source; EContain
 
 The Swing.svg Package has adapted a look-and-feel similar to that of MS-Windows. This is temporary. The package supports a pluggable look-and-feel model.
 
-More details are [here](https://github.com/websemantics/Oea.svg/raw/master/pdf/svg_open_2005_mem.pdf)
+![Swing.svg](https://raw.githubusercontent.com/websemantics/Oea.svg/master/img/screens/swing.png)
+
+The above is a collection of all the GUI componments supported by Swing.svg
+
+Download the original paper published in 2005 with more details [here](https://github.com/websemantics/Oea.svg/raw/master/docs/svg_open_2005_mem.pdf)
