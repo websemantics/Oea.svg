@@ -4,7 +4,9 @@ SVG GUI and Graphics Library built after Java AWT. The Oea Framework provides th
 
 ![Calc](https://raw.githubusercontent.com/websemantics/Oea.svg/master/img/screens/calc.png)
 
-[Live Demo](http://oeasvg.com)
+The example above is a working calculator built with Oea.svg.
+
+For moe examples click on [Live Demo](http://oeasvg.com)
 
 ## Java.js
 
