@@ -22,4 +22,4 @@ Button class handles AWT-like events generated from an indirect source; EContain
 
 The Swing.svg Package has adapted a look-and-feel similar to that of MS-Windows. This is temporary. The package supports a pluggable look-and-feel model.
 
-More details are here
+More details are [here](https://github.com/websemantics/Oea.svg/raw/master/pdf/svg_open_2005_mem.pdf)
