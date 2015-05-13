@@ -6,7 +6,7 @@ SVG GUI and Graphics Library built after Java AWT. The Oea Framework provides th
 
 The example above is a working calculator built with Oea.svg.
 
-For moe examples click on [Live Demo](http://oeasvg.com)
+For more examples click on [Live Demo](http://oeasvg.com)
 
 ## Java.js
 
@@ -32,6 +32,11 @@ The Swing.svg Package has adapted a look-and-feel similar to that of MS-Windows.
 
 ![Swing.svg](https://raw.githubusercontent.com/websemantics/Oea.svg/master/img/screens/swing.png)
 
-The above is a collection of all the GUI componments supported by Swing.svg
+The above is a collection of all the GUI components supported by Swing.svg
 
 Download the original paper published in 2005 with more details [here](https://github.com/websemantics/Oea.svg/raw/master/docs/svg_open_2005_mem.pdf)
+
+## Install
+
+Clone this repo and then run bower install. Check out the demo folder.
+
