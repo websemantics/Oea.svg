@@ -40,3 +40,9 @@ Download the original paper published in 2005 with more details [here](https://g
 
 Clone this repo and then run bower install. Check out the demo folder.
 
+## Related Projects
+
+* [Hotdraw.js](https://github.com/websemantics/Hotdraw.js) - [Live Demo](http://oeasvg.com/bower_components/Hotdraw.js/index.html)
+
+* [Browser.js](https://github.com/websemantics/Browser.js) - [Live Demo](http://oeasvg.com/bower_components/Browserjs/demos/script/index.html)
+
