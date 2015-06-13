@@ -42,7 +42,7 @@ Clone this repo and then run bower install. Check out the demo folder.
 
 ## Related Projects
 
-* [Hotdraw.js](https://github.com/websemantics/Hotdraw.js) - [Live Demo](http://oeasvg.com/bower_components/Hotdraw.js/index.html)
+* [Hotdraw.js](https://github.com/websemantics/Hotdraw.js) - or view a [Live Demo](http://oeasvg.com/bower_components/Hotdraw.js/index.html).
 
-* [Browser.js](https://github.com/websemantics/Browser.js) - [Live Demo](http://oeasvg.com/bower_components/Browserjs/demos/script/index.html)
+* [Browser.js](https://github.com/websemantics/Browser.js) - or  view a [Live Demo](http://oeasvg.com/bower_components/Browserjs/demos/script/index.html).
 
