@@ -271,7 +271,8 @@ ColorComboBox.prototype.initColorComboBox = function(name) {
     }
 
 ColorComboBox.prototype.changeToColor = function( /* Color */ color) {
-        this.rootg.setBackground(color)
+        if(this.rootg)this
+            this.rootg.setBackground(color)
     }
 
 ColorComboBox.prototype.displayComponent = function( /* ColorlList */ cl) {
