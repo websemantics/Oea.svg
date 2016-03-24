@@ -46,7 +46,7 @@ Download the original paper published in 2005 with more details [here](https://g
 #### Fixed
 - Fixed an issue with getting text node baseline.
 - Fixed an issue with ColorComboBox trying to set background color for null node.
-
+- Fixed an issue with Chrome 48 removing support for `SVGGraphicsElement.getTransformToElement`.
 
 ## Install
 

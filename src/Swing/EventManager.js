@@ -124,16 +124,22 @@ EventManager.prototype.defaultProcessMouseMotionEvent = function(awtEventType, e
 
         if (this.isHidden != undefined && this.isHidden()) {
             this.show();
-            matrix = this.getNode().getScreenCTM().multiply(this.getNode().getTransformToElement(this.getNode()));
+            matrix = this.getNode().getScreenCTM().multiply(this.getTransformToElement(this.getNode()));
             this.hide();
         } else
-            matrix = this.getNode().getScreenCTM().multiply(this.getNode().getTransformToElement(this.getNode()));
+            matrix = this.getNode().getScreenCTM().multiply(this.getTransformToElement(this.getNode()));
 
         x = matrix.inverse().a * evt.clientX + matrix.inverse().c * evt.clientY + matrix.inverse().e;
         y = matrix.inverse().b * evt.clientX + matrix.inverse().d * evt.clientY + matrix.inverse().f;
 
         this.mouseMotionEventHandler(awtEventType, new MouseEvent(this, evt, x, y));
     }
+
+EventManager.prototype.getTransformToElement = function(elem) {
+    // Summary :  
+    // Fix for ,
+    return elem.getScreenCTM().inverse().multiply(elem.getScreenCTM());
+};
 
 EventManager.prototype.defaultProcessMouseEvent = function(awtEventType, evt) {
     // Summary :  
@@ -147,10 +153,10 @@ EventManager.prototype.defaultProcessMouseEvent = function(awtEventType, evt) {
 
         if (this.isHidden != undefined && this.isHidden()) {
             this.show();
-            matrix = this.getNode().getScreenCTM().multiply(this.getNode().getTransformToElement(this.getNode()));
+            matrix = this.getNode().getScreenCTM().multiply(this.getTransformToElement(this.getNode()));
             this.hide();
         } else
-            matrix = this.getNode().getScreenCTM().multiply(this.getNode().getTransformToElement(this.getNode()));
+            matrix = this.getNode().getScreenCTM().multiply(this.getTransformToElement(this.getNode()));
 
         x = matrix.inverse().a * evt.clientX + matrix.inverse().c * evt.clientY + matrix.inverse().e;
         y = matrix.inverse().b * evt.clientX + matrix.inverse().d * evt.clientY + matrix.inverse().f;
