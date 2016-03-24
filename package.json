@@ -1,13 +1,13 @@
 {
     "name": "oeasvg",
-    "version": "0.1.0",
+    "version": "0.1.5",
     "description": "SVG GUI and Graphics Library built after Java AWT",
     "main": "./dist/oea.svg.js",
     "repository": {
         "type": "git",
         "url": "git@github.com:websemantics/Oea.svg.git"
     },
-    "author": "Adnan Sagar, PhD.",
+    "author": "Adnan M.Sagar, PhD.",
     "license": "MIT",
     "devDependencies": {
         "grunt": "~0.4.1",
