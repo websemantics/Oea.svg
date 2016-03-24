@@ -56,7 +56,7 @@ Download the original paper published in 2005 with more details [here](https://g
 git clone https://github.com/websemantics/Oea.svg
 ```
 
-- Install Node.js Modules
+- Install Node.js modules
 
 ```
 cd Oea.svg
