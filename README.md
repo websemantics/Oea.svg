@@ -53,6 +53,7 @@ git clone https://github.com/websemantics/Oea.svg
 
 ```
 cd Oea.svg
+
 sudo npm install
 ```
 
@@ -62,7 +63,7 @@ sudo npm install
 bower install
 ```
 
-- View `index.html` in your browser
+- View `demos` folder for examples
 
 ## Related Projects
 
