@@ -37,9 +37,9 @@ The above is a collection of all the GUI components supported by Swing.svg
 
 Download the original paper published in 2005 with more details [here](https://github.com/websemantics/Oea.svg/raw/master/docs/svg_open_2005_mem.pdf)
 
-## Install
-
-Clone this repo and then run bower install. Check out the demo folder.
+### [0.1.0] - 2016-03-24
+#### Fixed
+- Fixed an issue with getting text node baseline.
 
 ## Install
 
