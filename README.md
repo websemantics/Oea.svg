@@ -40,6 +40,7 @@ Download the original paper published in 2005 with more details [here](https://g
 ### [0.1.0] - 2016-03-24
 #### Fixed
 - Fixed an issue with getting text node baseline.
+- Fixed an issue with ColorComboBox trying to set background color for null node.
 
 ## Install
 
