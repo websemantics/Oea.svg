@@ -1,6 +1,7 @@
 # Oea.svg
 > Updated : March 24, 2016
 
+
 SVG GUI and Graphics Library built after Java AWT. The Oea Framework provides three Javascript libraries, 1- Java.js, 2- Draw2D.svg and 3- Swing.svg to build SVG GUI applications.
 
 ![Calc](https://raw.githubusercontent.com/websemantics/Oea.svg/master/img/screens/calc.png)
@@ -9,15 +10,18 @@ The example above is a working calculator built with Oea.svg.
 
 For more examples click on [Live Demo](http://oeasvg.com)
 
+
 ## Java.js
 
 This package container a number of core Java classes that was required to implement both, Draw2D.svg and Swing.svg. Two Java packages have been ported, AWT and Util. AWT classes included Event and Geom namespaces while Util package included generic classes such as Hastable, Vector, Enumeration and many other useful code.
+
 
 ## Draw2D.svg
 
 The svgDraw2D package is written for SVG in JavaScript to decouple the manipulation of DOM/SVG interfaces from writing graphics applications. The package provides a higher level of abstraction to JavaScript developers to manipulate graphics independently from the DOM API. It also provides capabilities for drawing sophisticated two-dimensional shapes, working with fonts, text and text layout, controlling colours; and it features layering management, styled tool tips and desktop canvas. The work on the svgDraw2D package was inspired by the Java AWT package.
 
 ![Draw2D.svg](https://raw.githubusercontent.com/websemantics/Oea.svg/master/img/screens/draw2d.png)
+
 
 ## Swing.svg
 
@@ -37,10 +41,12 @@ The above is a collection of all the GUI components supported by Swing.svg
 
 Download the original paper published in 2005 with more details [here](https://github.com/websemantics/Oea.svg/raw/master/docs/svg_open_2005_mem.pdf)
 
-### [0.1.0] - 2016-03-24
+
+### [0.1.4] - 2016-03-24
 #### Fixed
 - Fixed an issue with getting text node baseline.
 - Fixed an issue with ColorComboBox trying to set background color for null node.
+
 
 ## Install
 
@@ -65,6 +71,7 @@ bower install
 ```
 
 - View `demos` folder for examples
+
 
 ## Related Projects
 
