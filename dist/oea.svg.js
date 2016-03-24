@@ -1,6 +1,6 @@
-// Oea.svg 0.1.0
+// Oea.svg 0.1.5
 //
-// Copyright (c) 2004 – 2015 Web Semantics,Inc. All rights reserved.
+// Copyright (c) 2004 – 2016 Web Semantics,Inc. All rights reserved.
 //
 // http://www.opensource.org/licenses/mit-license.php
 //
@@ -10,13 +10,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// build: 2015-05-04
+// build: 2016-03-24
 
 /**
  * Oea.svg
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2004
  * @package   websemantics/oea
@@ -71,7 +71,7 @@ function initialise() {
  * Draw2D.svg
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     17th November 2005
  * @package   websemantics/oea/draw2d.svg
@@ -96,7 +96,7 @@ function initDraw2D(){
  * Swing.svg
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     17th November 2004
  * @package   websemantics/oea/swing.svg
@@ -184,7 +184,7 @@ var clipboard = new Clipboard();
  * Draw2D.svg : Point
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
  * @package   websemantics/oea/draw2d.svg/fclasses/graphical
@@ -224,7 +224,7 @@ Point.prototype.getY = function(y) {
  * Draw2D.svg : Rect
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
  * @package   websemantics/oea/draw2d.svg/fclasses/graphical
@@ -372,7 +372,7 @@ Rect.prototype.onResize = function() {;
  * Colors used to draw 3D objects (i.e. windows, buttons , etc)
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th November 2005
  * @package   websemantics/oea/draw2d.svg
@@ -394,7 +394,7 @@ var pal=pal0;
  * Draw2D.svg : SVGNode
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
  * @package   websemantics/oea/draw2d.svg/fclasses/svg
@@ -582,7 +582,7 @@ SVGNode.prototype.toString = function() {
  * Draw2D.svg : SVG Utility Functions
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
  * @package   websemantics/oea/draw2d.svg/fclasses/svg
@@ -721,7 +721,7 @@ function printXMLNode(element, text, spaces) {
  * Draw2D.svg : SvgDefs
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     22nd November 2005
  * @package   websemantics/oea/draw2d.svg/fclasses/svg
@@ -760,7 +760,7 @@ function df_addToDefs(node){
  * Draw2D.svg : RectNode
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
  * @package   websemantics/oea/draw2d.svg/fclasses/graphical
@@ -822,7 +822,7 @@ RectNode.prototype.transformRectNode = function() {
  * Draw2D.svg : Node
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
  * @package   websemantics/oea/draw2d.svg/fclasses/node
@@ -983,7 +983,7 @@ Node.prototype.disableAllMouseEvents = function() {
  * Draw2D.svg : Layer
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     10th November 2004
  * @package   websemantics/oea/draw2d.svg
@@ -1104,7 +1104,7 @@ Layer.prototype.isHidden = function() {
  * Draw2D.svg : Page
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     10th November 2004 
  * @package   websemantics/oea/draw2d.svg
@@ -1208,7 +1208,7 @@ Page.prototype.getId = function() {
  * Draw2D.svg : Desktop
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     23rd Sept 2004
  * @package   websemantics/oea/draw2d.svg
@@ -1454,7 +1454,7 @@ Node_Callback.prototype.toString = function() {
  * Draw2D.svg : Font
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     4th Septemebr 2002
  * @package   websemantics/oea/draw2d.svg
@@ -1543,7 +1543,7 @@ Font.prototype.toString = function() {
  * Draw2D.svg : FontMetrics
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     4th Septemebr 2002
  * @package   websemantics/oea/draw2d.svg
@@ -1622,7 +1622,7 @@ FontMetrics.prototype.toString = function() {
  * Draw2D.svg : Graphics
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     4th Septemebr 2002 -> 5th November 2004 -> 18th July 2005
  * @package   websemantics/oea/draw2d.svg
@@ -1871,7 +1871,7 @@ Graphics.prototype.oldClear = function() {
  * Draw2D.svg : Shape
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -1935,7 +1935,7 @@ Shape.prototype.getStrokeWidth = function() {
  * Draw2D.svg : Line
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -2008,7 +2008,7 @@ Line.prototype.onResize = function() {
  * Draw2D.svg : Oval
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -2089,7 +2089,7 @@ Oval.prototype.clone = function( /* */ parent) {
  * Draw2D.svg : Circle
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -2152,7 +2152,7 @@ Circle.prototype.transformRectNode = function() {
  * Draw2D.svg : Polygon
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     17th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -2203,7 +2203,7 @@ Polygon.prototype.clone = function( /* */ parent) {
  * Draw2D.svg : Path
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     26th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -2252,7 +2252,7 @@ Path.prototype.setXYPoints = function(xx, yy) {
  * Draw2D.svg : WinBorder
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -2395,7 +2395,7 @@ WinBorder.prototype.onResize = function() {
  * Draw2D.svg : StepBorder
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     17th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -2491,7 +2491,7 @@ StepBorder.prototype.onResize = function() {
  * Draw2D.svg : BoxBorder
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     17th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -2619,7 +2619,7 @@ BoxBorder.prototype.onResize = function() {
  * Draw2D.svg : RRectangle
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     9th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -2681,7 +2681,7 @@ RRectangle.prototype.clone = function( /* */ parent) {
  * Draw2D.svg : Rectangle
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     9th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -2714,7 +2714,7 @@ Rectangle.prototype.clone = function( /* */ parent) {
  * Draw2D.svg : Text
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     22nd November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -2883,7 +2883,7 @@ Text.prototype.onResize = function() {}
  * Support: SVG 1.2 only
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     22th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -3205,7 +3205,7 @@ TextView.prototype.onResize = function() {
  * Draw2D.svg : Image
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th November 2005
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -3251,7 +3251,7 @@ Image.prototype.onResize = function() {
  * Draw2D.svg : SpinnerImage
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     1st May 2015
  * @package   websemantics/oea/draw2d.svg/shapes
@@ -3302,7 +3302,7 @@ SpinnerImage.prototype.initSpinner = function(x, y, w, h, spinner, graphics) {
  * OR dynamic elements (cursors) =< not supported in Batik yet.
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     18th November 2005
  * @package   websemantics/oea/draw2d.svg
@@ -3364,7 +3364,7 @@ Cursor.prototype.create = function(x, y, shape) {
  * Tooltip uses the 'class' attribute to attaches the alternative text to,..
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     24th December 2004
  * @package   websemantics/oea/draw2d.svg
@@ -3579,7 +3579,7 @@ function tp_disposeToolTipNode() {
  * Java.js : Vactor
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
  * @package   websemantics/oea/java.js/util
@@ -3793,7 +3793,7 @@ Vector.prototype.toString = function() {
  * Java.js : Hashtable
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     11th January 2005
  * @package   websemantics/oea/java.js/util
@@ -3958,7 +3958,7 @@ Hashtable.prototype.toString = function() {
  * Java.js : EventListener
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th January 2005
  * @package   websemantics/oea/java.js/util
@@ -3985,7 +3985,7 @@ EventListener.prototype.initEventListener = function(){}
  * Java.js : EventObject
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th January 2005
  * @package   websemantics/oea/java.js/util
@@ -4035,7 +4035,7 @@ EventObject.prototype.toString = function() {
  * Java.js : Enumeration
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th January 2005
  * @package   websemantics/oea/java.js/util
@@ -4073,7 +4073,7 @@ function Enumeration(obj){
  * Java.js : Enumerator
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     15th Feb 2005
  * @package   websemantics/oea/java.js/util
@@ -4120,7 +4120,7 @@ Enumerator.prototype.nextElement = function() {
  * Java.js : ReverseEnumerator
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th January 2005
  * @package   websemantics/oea/java.js/util
@@ -4166,7 +4166,7 @@ ReverseEnumerator.prototype.nextElement = function() {
  * Java.js : ReverseVectorEnumerator
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th January 2005
  * @package   websemantics/oea/java.js/util
@@ -4218,7 +4218,7 @@ ReverseVectorEnumerator.prototype.nextElement = function() {
  * Java.js : Point2D
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
  * @package   websemantics/oea/java.js/awt/geom
@@ -4338,7 +4338,7 @@ Point2D.prototype.equals = function(obj) {
  * Java.js : Point
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
  * @package   websemantics/oea/java.js/awt/geom
@@ -4412,7 +4412,7 @@ Point.prototype.equals = function(obj) {
  * Java.js : Dimension2D
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
  * @package   websemantics/oea/java.js/awt/geom
@@ -4463,7 +4463,7 @@ Dimension2D.prototype.clone = function() {
  * Java.js : Dimension2D
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
  * @package   websemantics/oea/java.js/awt/geom
@@ -4550,7 +4550,7 @@ Dimension.prototype.toString = function() {
  * NOT FULLY IMPLEMENTED
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
  * @package   websemantics/oea/java.js/awt/geom
@@ -4589,7 +4589,7 @@ Rectangle2D.prototype.toString = function() {
  * Java.js : gRectangle
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
  * @package   websemantics/oea/java.js/awt/geom
@@ -5132,7 +5132,7 @@ gRectangle.prototype.equals = function( /* Object */ obj) {
  * Java.js : gPolygon
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     7th August 2005
  * @package   websemantics/oea/java.js/awt/geom
@@ -5612,7 +5612,7 @@ gPolygon.prototype.toString = function() {
  * Java.js : Insets
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th January 2005
  * @package   websemantics/oea/java.js/awt
@@ -5677,7 +5677,7 @@ Insets.prototype.clone = function() {
  * Java.js :Color
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     11th January 2005
  * @package   websemantics/oea/java.js/awt
@@ -5836,7 +5836,7 @@ var CColor = new cColor();
  * Java.js : MouseListener
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th January 2005
  * @package   websemantics/oea/java.js/awt/event
@@ -5872,7 +5872,7 @@ MouseListener.prototype.mouseExited = function(/* MouseEvent */ e){;}
  * Java.js : MouseMotionListener
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th January 2005
  * @package   websemantics/oea/java.js/awt/event
@@ -5901,7 +5901,7 @@ MouseMotionListener.prototype.mouseMoved = function(/* MouseEvent */ e){;}
  * Java.js : MouseEvent
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     12th January 2005
  * @package   websemantics/oea/java.js/awt/event
@@ -6052,7 +6052,7 @@ MouseEvent.prototype.toString = function() {
  * Java.js : KeyEvent
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th November 2005
  * @package   websemantics/oea/java.js/awt/event
@@ -6328,7 +6328,7 @@ KeyEvent.prototype.toString = function() {
  * Java.js : ActionEvent
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th Feb 2005
  * @package   websemantics/oea/java.js/awt/event
@@ -6438,7 +6438,7 @@ ActionEvent.prototype.toString = function() {
  * Java.js : KeyListener
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     12th January 2005
  * @package   websemantics/oea/java.js/awt/event
@@ -6480,7 +6480,7 @@ KeyListener.prototype.keyReleased = function(/* KeyEvent */ e){
  * Java.js : ActionListener
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     23rd Feb 2005
  * @package   websemantics/oea/java.js/awt/event
@@ -6516,7 +6516,7 @@ ActionListener.prototype.actionPerformed = function(/* ActionEvent */ e){
  * Swing.svg : ButtonSkin
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
  * @package   websemantics/oea/swing.svg/lookandfeel
@@ -6563,7 +6563,7 @@ ButtonSkin.prototype.clone = function(){}
  * Swing.svg : SimpleButtonSkin
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
  * @package   websemantics/oea/swing.svg/lookandfeel
@@ -6636,7 +6636,7 @@ SimpleButtonSkin.prototype.clone = function() {
  * Swing.svg : WinButtonSkin
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
  * @package   websemantics/oea/swing.svg/lookandfeel
@@ -6669,7 +6669,7 @@ WinButtonSkin.prototype.clone = function() {
  * Swing.svg : BoxButtonSkin
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
  * @package   websemantics/oea/swing.svg/lookandfeel
@@ -6731,7 +6731,7 @@ BoxButtonSkin.prototype.clone = function() {
  * Swing.svg : ToolButtonSkin
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
  * @package   websemantics/oea/swing.svg/lookandfeel
@@ -6798,7 +6798,7 @@ ToolButtonSkin.prototype.clone = function() {
  * Swing.svg : FlatButtonSkin
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
  * @package   websemantics/oea/swing.svg/lookandfeel
@@ -6842,7 +6842,7 @@ FlatButtonSkin.prototype.clone = function() {
  * Swing.svg : WindowSkin
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
  * @package   websemantics/oea/swing.svg/lookandfeel
@@ -6900,7 +6900,7 @@ WindowSkin.prototype.clone = function() {}
  * Swing.svg : DefaultWindowSkin
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     28th July 2005
  * @package   websemantics/oea/swing.svg/lookandfeel
@@ -7005,7 +7005,7 @@ DefaultWindowSkin.prototype.clone = function() {
  * Swing.svg : SimpleWindowSkin
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     28th July 2005
  * @package   websemantics/oea/swing.svg/lookandfeel
@@ -7113,7 +7113,7 @@ SimpleWindowSkin.prototype.clone = function() {
  * Swing.svg : ListenerManager
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     12th Febuary 2005
  * @package   websemantics/oea/swing.svg
@@ -7350,7 +7350,7 @@ ListenerManager.prototype.keyReleased = function( /* KeyEvent */ event) {}
  * Swing.svg : EventManager
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     12th Febuary 2005
  * @package   websemantics/oea/swing.svg
@@ -7472,16 +7472,22 @@ EventManager.prototype.defaultProcessMouseMotionEvent = function(awtEventType, e
 
         if (this.isHidden != undefined && this.isHidden()) {
             this.show();
-            matrix = this.getNode().getScreenCTM().multiply(this.getNode().getTransformToElement(this.getNode()));
+            matrix = this.getNode().getScreenCTM().multiply(this.getTransformToElement(this.getNode()));
             this.hide();
         } else
-            matrix = this.getNode().getScreenCTM().multiply(this.getNode().getTransformToElement(this.getNode()));
+            matrix = this.getNode().getScreenCTM().multiply(this.getTransformToElement(this.getNode()));
 
         x = matrix.inverse().a * evt.clientX + matrix.inverse().c * evt.clientY + matrix.inverse().e;
         y = matrix.inverse().b * evt.clientX + matrix.inverse().d * evt.clientY + matrix.inverse().f;
 
         this.mouseMotionEventHandler(awtEventType, new MouseEvent(this, evt, x, y));
     }
+
+EventManager.prototype.getTransformToElement = function(elem) {
+    // Summary :  
+    // Fix for ,
+    return elem.getScreenCTM().inverse().multiply(elem.getScreenCTM());
+};
 
 EventManager.prototype.defaultProcessMouseEvent = function(awtEventType, evt) {
     // Summary :  
@@ -7495,10 +7501,10 @@ EventManager.prototype.defaultProcessMouseEvent = function(awtEventType, evt) {
 
         if (this.isHidden != undefined && this.isHidden()) {
             this.show();
-            matrix = this.getNode().getScreenCTM().multiply(this.getNode().getTransformToElement(this.getNode()));
+            matrix = this.getNode().getScreenCTM().multiply(this.getTransformToElement(this.getNode()));
             this.hide();
         } else
-            matrix = this.getNode().getScreenCTM().multiply(this.getNode().getTransformToElement(this.getNode()));
+            matrix = this.getNode().getScreenCTM().multiply(this.getTransformToElement(this.getNode()));
 
         x = matrix.inverse().a * evt.clientX + matrix.inverse().c * evt.clientY + matrix.inverse().e;
         y = matrix.inverse().b * evt.clientX + matrix.inverse().d * evt.clientY + matrix.inverse().f;
@@ -7573,7 +7579,7 @@ EventManager.prototype.disableKeyListener = function(useCapture) {
  * Swing.svg : FlowLayout
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     12th Feb 2005
  * @package   websemantics/oea/swing.svg
@@ -7884,7 +7890,7 @@ FlowLayout.prototype.toString = function() {
  * Swing.svg : BoxLayout
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     12th Feb 2005
  * @package   websemantics/oea/swing.svg
@@ -8188,7 +8194,7 @@ BoxLayout.prototype.toString = function() {
  * Swing.svg : Component
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     30th January 2005 -> 15th July 2005
  * @package   websemantics/oea/swing.svg
@@ -8870,7 +8876,7 @@ Component.prototype.toString = function() {
  * Swing.svg : Canvas
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     9th Feb 2005
  * @package   websemantics/oea/swing.svg
@@ -8960,7 +8966,7 @@ Canvas.prototype.lostFocusCanvas = function() {
  * Swing.svg : Container
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     13th Feb 2005
  * @package   websemantics/oea/swing.svg
@@ -9407,7 +9413,7 @@ Container.prototype.fireMouseMotionEventToComponent = function( /* component */ 
  * Swing.svg : Panel
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     9th Feb 2005
  * @package   websemantics/oea/swing.svg
@@ -9480,7 +9486,7 @@ Panel.prototype.recalcPanel = function() {
  * Swing.svg : Icon
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     20th July 2005
  * @package   websemantics/oea/swing.svg
@@ -9536,7 +9542,7 @@ Icon.prototype.translate = function(x, y) {
  * Swing.svg : Spinner
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     1st May 2015
  * @package   websemantics/oea/swing.svg
@@ -9595,7 +9601,7 @@ Spinner.prototype.hide = function() {
  * Swing.svg : Label
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     15th July 2005
  * @package   websemantics/oea/swing.svg
@@ -9843,7 +9849,7 @@ Label.prototype.toString = function() {
  * SUPPORTS LOOK AND FEEL
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     11th Feb 2005
  * @package   websemantics/oea/swing.svg
@@ -10044,7 +10050,7 @@ Button.prototype.toString = function() {
  * SUPPORTS LOOK AND FEEL
  * 
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25 Augus 2005
  * @package   websemantics/oea/swing.svg
@@ -10182,7 +10188,7 @@ CheckBox.prototype.toString = function() {
  * SUPPORTS LOOK AND FEEL
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25 Augus 2005
  * @package   websemantics/oea/swing.svg
@@ -10256,7 +10262,7 @@ RadioButton.prototype.setSelected = function( /* boolean */ selected) {
  * Swing.svg : ButtonGroup
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th July 2005
  * @package   websemantics/oea/swing.svg
@@ -10357,7 +10363,7 @@ ButtonGroup.prototype.buttonGroupMouseClicked = function( /* MouseEvent */ e) {
  * Swing.svg : Toolbar
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     20th July 2005
  * @package   websemantics/oea/swing.svg
@@ -10477,7 +10483,7 @@ Toolbar.prototype.actionPerformed = function( /* ActionEvent */ e) {
  * Swing.svg : TabbedPane
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     21th July 2005
  * @package   websemantics/oea/swing.svg
@@ -10693,7 +10699,7 @@ TabbedPane.prototype.actionPerformed = function( /* ActionEvent */ e) {
  * Swing.svg : Pane
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     21th July 2005
  * @package   websemantics/oea/swing.svg
@@ -11003,7 +11009,7 @@ Pane.prototype.recalcPaneOnly = function() {
  * Swing.svg : TitledBorder
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     15th July 2005
  * @package   websemantics/oea/swing.svg
@@ -11173,7 +11179,7 @@ TitledBorder.prototype.positionComponent = function() {
  * Swing.svg : Separator
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th July 2005
  * @package   websemantics/oea/swing.svg
@@ -11239,7 +11245,7 @@ Separator.prototype.recalcSeparator = function() {
  * Swing.svg : List
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th July 2005
  * @package   websemantics/oea/swing.svg
@@ -11442,7 +11448,7 @@ List.prototype.getSelected = function() {
  * Swing.svg : PopUpMenu
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th July 2005
  * @package   websemantics/oea/swing.svg
@@ -11544,7 +11550,7 @@ PopUpMenu.prototype.popUpMenuMousePressed = function( /* MouseEvent */ e) {
  * Swing.svg : TextBox (***** 5 Stars Widget)
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th July 2005 (me birthday)
  * @package   websemantics/oea/swing.svg
@@ -11773,9 +11779,7 @@ TextBox.prototype.createSVGContentTextBox = function() {
         }
         
         // Get THE REAL baseline,.. 
-        this.cursorBaseline = this.textShape.getNode().getStartPositionOfChar(0).y;
-        
-        // this.cursorBaseline=fm.getBaseline(); 
+        this.cursorBaseline = this.getBaseline();
 
         // Set text
         if (this.text != null) this.setText(this.text);
@@ -11846,6 +11850,15 @@ TextBox.prototype.getDisplayText = function( /* String */ text) {
         return text;
     }
 
+TextBox.prototype.getBaseline = function(pos) {
+        
+        pos = pos || 0;
+        var textWidth = this.textShape.getNode().getBBox().width;
+        
+        // this.baseline = fm.getBaseline(); 
+        return ( textWidth > 0 ) ? this.textShape.getNode().getStartPositionOfChar(pos).y : 0;        
+}
+
 TextBox.prototype.setText = function( /* String */ text) {
 
         this.text = text;
@@ -11915,7 +11928,7 @@ TextBox.prototype.getStartPositionOfChar = function( /* int */ charPos) {
     // getStartPositionOfChar: Wrapper around SVG Interface
 
         if( charPos > -1) // Added April 28th 2015
-          return (this.textShape.getNode().getStartPositionOfChar(charPos));
+          return this.getBaseline(charPos);
         else 
           return 0;
     }
@@ -12474,7 +12487,7 @@ TextBox.prototype.setFont = function( /* Font */ font) {
         this.cursorWidth = fm.getStringWidth("i") / 4;
 
         // Get THE REAL baseline,.. 
-        this.cursorBaseline = this.textShape.getNode().getStartPositionOfChar(0).y;
+        this.cursorBaseline = this.getBaseline();
         this.cursorShape.setSize(this.cursorWidth, this.cursorHeight);
 
         this.setSize(this.w, this.h);
@@ -12558,7 +12571,7 @@ TextBox.prototype.toString = function() {
  * Swing.svg : ComboBox
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     27th July 2005
  * @package   websemantics/oea/swing.svg
@@ -12773,7 +12786,7 @@ ComboBox.prototype.actionPerformed = function( /* ActionEvent */ e) {
  * Swing.svg : Spin
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     17th November 2004
  * @package   websemantics/oea/swing.svg
@@ -12977,7 +12990,7 @@ Spin.prototype.notifyListeners = function() {
  * Swing.svg : ColorComboBox
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     28th July 2005
  * @package   websemantics/oea/swing.svg
@@ -13246,7 +13259,8 @@ ColorComboBox.prototype.initColorComboBox = function(name) {
     }
 
 ColorComboBox.prototype.changeToColor = function( /* Color */ color) {
-        this.rootg.setBackground(color)
+        if(this.rootg)this
+            this.rootg.setBackground(color)
     }
 
 ColorComboBox.prototype.displayComponent = function( /* ColorlList */ cl) {
@@ -13264,7 +13278,7 @@ ColorComboBox.prototype.getColor = function() {
  * Swing.svg : Window
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     11th Feb 2005 -> 28th July 2005
  * @package   websemantics/oea/swing.svg
@@ -13637,7 +13651,7 @@ Window.prototype.actionPerformedWindow = function( /* ActionEvent */ e) {
  * This is used to launch swing applications,...use callback function
  * 
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     9th September 2005
  * @package   websemantics/oea/tools
