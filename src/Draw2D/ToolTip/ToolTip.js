@@ -6,7 +6,7 @@
  *  <g class="text"><rect /><circle/></g>)
  * Tooltip uses the 'class' attribute to attaches the alternative text to,..
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     24th December 2004

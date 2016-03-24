@@ -3,7 +3,7 @@
   "version": "0.1.5",
   "homepage": "http://oeasvg.com",
   "authors": [
-    "Adnan Sagar, PhD <adnan@websemantics.ca>"
+    "Adnan M.Sagar, PhD. <adnan@websemantics.io>"
   ],
   "description": "SVG GUI and Graphics Library built following Java AWT. The Oea Framework provides three Javascript libraries, 1- Draw2D.svg, 2- Java.js and 3- Swing.svg to build SVG GUI applications",
   "main": "dist/oea.svg-min.js",

@@ -15,7 +15,7 @@
 /**
  * Oea.svg
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2004
@@ -70,7 +70,7 @@ function initialise() {
 /**
  * Draw2D.svg
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     17th November 2005
@@ -95,7 +95,7 @@ function initDraw2D(){
 /**
  * Swing.svg
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     17th November 2004
@@ -183,7 +183,7 @@ var clipboard = new Clipboard();
 /**
  * Draw2D.svg : Point
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
@@ -223,7 +223,7 @@ Point.prototype.getY = function(y) {
 /**
  * Draw2D.svg : Rect
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
@@ -371,7 +371,7 @@ Rect.prototype.onResize = function() {;
  * 
  * Colors used to draw 3D objects (i.e. windows, buttons , etc)
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th November 2005
@@ -393,7 +393,7 @@ var pal=pal0;
 /**
  * Draw2D.svg : SVGNode
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
@@ -581,7 +581,7 @@ SVGNode.prototype.toString = function() {
 /**
  * Draw2D.svg : SVG Utility Functions
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
@@ -720,7 +720,7 @@ function printXMLNode(element, text, spaces) {
 /**
  * Draw2D.svg : SvgDefs
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     22nd November 2005
@@ -759,7 +759,7 @@ function df_addToDefs(node){
 /**
  * Draw2D.svg : RectNode
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
@@ -821,7 +821,7 @@ RectNode.prototype.transformRectNode = function() {
 /**
  * Draw2D.svg : Node
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
@@ -982,7 +982,7 @@ Node.prototype.disableAllMouseEvents = function() {
 /**
  * Draw2D.svg : Layer
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     10th November 2004
@@ -1103,7 +1103,7 @@ Layer.prototype.isHidden = function() {
 /**
  * Draw2D.svg : Page
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     10th November 2004 
@@ -1207,7 +1207,7 @@ Page.prototype.getId = function() {
 /**
  * Draw2D.svg : Desktop
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     23rd Sept 2004
@@ -1453,7 +1453,7 @@ Node_Callback.prototype.toString = function() {
 /**
  * Draw2D.svg : Font
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     4th Septemebr 2002
@@ -1542,7 +1542,7 @@ Font.prototype.toString = function() {
 /**
  * Draw2D.svg : FontMetrics
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     4th Septemebr 2002
@@ -1621,7 +1621,7 @@ FontMetrics.prototype.toString = function() {
 /**
  * Draw2D.svg : Graphics
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     4th Septemebr 2002 -> 5th November 2004 -> 18th July 2005
@@ -1870,7 +1870,7 @@ Graphics.prototype.oldClear = function() {
 /**
  * Draw2D.svg : Shape
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th November 2005
@@ -1934,7 +1934,7 @@ Shape.prototype.getStrokeWidth = function() {
 /**
  * Draw2D.svg : Line
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th November 2005
@@ -2007,7 +2007,7 @@ Line.prototype.onResize = function() {
 /**
  * Draw2D.svg : Oval
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
@@ -2088,7 +2088,7 @@ Oval.prototype.clone = function( /* */ parent) {
 /**
  * Draw2D.svg : Circle
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th November 2005
@@ -2151,7 +2151,7 @@ Circle.prototype.transformRectNode = function() {
 /**
  * Draw2D.svg : Polygon
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     17th November 2005
@@ -2202,7 +2202,7 @@ Polygon.prototype.clone = function( /* */ parent) {
 /**
  * Draw2D.svg : Path
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     26th November 2005
@@ -2251,7 +2251,7 @@ Path.prototype.setXYPoints = function(xx, yy) {
 /**
  * Draw2D.svg : WinBorder
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th November 2005
@@ -2394,7 +2394,7 @@ WinBorder.prototype.onResize = function() {
 /**
  * Draw2D.svg : StepBorder
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     17th November 2005
@@ -2490,7 +2490,7 @@ StepBorder.prototype.onResize = function() {
 /**
  * Draw2D.svg : BoxBorder
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     17th November 2005
@@ -2618,7 +2618,7 @@ BoxBorder.prototype.onResize = function() {
 /**
  * Draw2D.svg : RRectangle
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     9th November 2005
@@ -2680,7 +2680,7 @@ RRectangle.prototype.clone = function( /* */ parent) {
 /**
  * Draw2D.svg : Rectangle
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     9th November 2005
@@ -2713,7 +2713,7 @@ Rectangle.prototype.clone = function( /* */ parent) {
 /**
  * Draw2D.svg : Text
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     22nd November 2005
@@ -2882,7 +2882,7 @@ Text.prototype.onResize = function() {}
  *
  * Support: SVG 1.2 only
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     22th November 2005
@@ -3204,7 +3204,7 @@ TextView.prototype.onResize = function() {
 /**
  * Draw2D.svg : Image
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th November 2005
@@ -3250,7 +3250,7 @@ Image.prototype.onResize = function() {
 /**
  * Draw2D.svg : SpinnerImage
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     1st May 2015
@@ -3301,7 +3301,7 @@ SpinnerImage.prototype.initSpinner = function(x, y, w, h, spinner, graphics) {
  * n-resize : se-resize : sw-resize : s-resize : w-resize : text ; wait : help  
  * OR dynamic elements (cursors) =< not supported in Batik yet.
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     18th November 2005
@@ -3363,7 +3363,7 @@ Cursor.prototype.create = function(x, y, shape) {
  *  <g class="text"><rect /><circle/></g>)
  * Tooltip uses the 'class' attribute to attaches the alternative text to,..
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     24th December 2004
@@ -3578,7 +3578,7 @@ function tp_disposeToolTipNode() {
 /**
  * Java.js : Vactor
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
@@ -3792,7 +3792,7 @@ Vector.prototype.toString = function() {
 /**
  * Java.js : Hashtable
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     11th January 2005
@@ -3957,7 +3957,7 @@ Hashtable.prototype.toString = function() {
 /**
  * Java.js : EventListener
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th January 2005
@@ -3984,7 +3984,7 @@ EventListener.prototype.initEventListener = function(){}
 /**
  * Java.js : EventObject
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th January 2005
@@ -4034,7 +4034,7 @@ EventObject.prototype.toString = function() {
 /**
  * Java.js : Enumeration
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th January 2005
@@ -4072,7 +4072,7 @@ function Enumeration(obj){
 /**
  * Java.js : Enumerator
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     15th Feb 2005
@@ -4119,7 +4119,7 @@ Enumerator.prototype.nextElement = function() {
 /**
  * Java.js : ReverseEnumerator
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th January 2005
@@ -4165,7 +4165,7 @@ ReverseEnumerator.prototype.nextElement = function() {
 /**
  * Java.js : ReverseVectorEnumerator
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th January 2005
@@ -4217,7 +4217,7 @@ ReverseVectorEnumerator.prototype.nextElement = function() {
 /**
  * Java.js : Point2D
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
@@ -4337,7 +4337,7 @@ Point2D.prototype.equals = function(obj) {
 /**
  * Java.js : Point
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
@@ -4411,7 +4411,7 @@ Point.prototype.equals = function(obj) {
 /**
  * Java.js : Dimension2D
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
@@ -4462,7 +4462,7 @@ Dimension2D.prototype.clone = function() {
 /**
  * Java.js : Dimension2D
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
@@ -4549,7 +4549,7 @@ Dimension.prototype.toString = function() {
  *
  * NOT FULLY IMPLEMENTED
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
@@ -4588,7 +4588,7 @@ Rectangle2D.prototype.toString = function() {
 /**
  * Java.js : gRectangle
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     6th January 2005
@@ -5131,7 +5131,7 @@ gRectangle.prototype.equals = function( /* Object */ obj) {
 /**
  * Java.js : gPolygon
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     7th August 2005
@@ -5611,7 +5611,7 @@ gPolygon.prototype.toString = function() {
 /**
  * Java.js : Insets
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th January 2005
@@ -5676,7 +5676,7 @@ Insets.prototype.clone = function() {
 /**
  * Java.js :Color
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     11th January 2005
@@ -5835,7 +5835,7 @@ var CColor = new cColor();
 /**
  * Java.js : MouseListener
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th January 2005
@@ -5871,7 +5871,7 @@ MouseListener.prototype.mouseExited = function(/* MouseEvent */ e){;}
 /**
  * Java.js : MouseMotionListener
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     8th January 2005
@@ -5900,7 +5900,7 @@ MouseMotionListener.prototype.mouseMoved = function(/* MouseEvent */ e){;}
 /**
  * Java.js : MouseEvent
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     12th January 2005
@@ -6051,7 +6051,7 @@ MouseEvent.prototype.toString = function() {
 /**
  * Java.js : KeyEvent
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th November 2005
@@ -6327,7 +6327,7 @@ KeyEvent.prototype.toString = function() {
 /**
  * Java.js : ActionEvent
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th Feb 2005
@@ -6437,7 +6437,7 @@ ActionEvent.prototype.toString = function() {
 /**
  * Java.js : KeyListener
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     12th January 2005
@@ -6479,7 +6479,7 @@ KeyListener.prototype.keyReleased = function(/* KeyEvent */ e){
 /**
  * Java.js : ActionListener
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     23rd Feb 2005
@@ -6515,7 +6515,7 @@ ActionListener.prototype.actionPerformed = function(/* ActionEvent */ e){
 /**
  * Swing.svg : ButtonSkin
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
@@ -6562,7 +6562,7 @@ ButtonSkin.prototype.clone = function(){}
 /**
  * Swing.svg : SimpleButtonSkin
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
@@ -6635,7 +6635,7 @@ SimpleButtonSkin.prototype.clone = function() {
 /**
  * Swing.svg : WinButtonSkin
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
@@ -6668,7 +6668,7 @@ WinButtonSkin.prototype.clone = function() {
 /**
  * Swing.svg : BoxButtonSkin
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
@@ -6730,7 +6730,7 @@ BoxButtonSkin.prototype.clone = function() {
 /**
  * Swing.svg : ToolButtonSkin
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
@@ -6797,7 +6797,7 @@ ToolButtonSkin.prototype.clone = function() {
 /**
  * Swing.svg : FlatButtonSkin
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
@@ -6841,7 +6841,7 @@ FlatButtonSkin.prototype.clone = function() {
 /**
  * Swing.svg : WindowSkin
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     19th July 2005
@@ -6899,7 +6899,7 @@ WindowSkin.prototype.clone = function() {}
 /**
  * Swing.svg : DefaultWindowSkin
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     28th July 2005
@@ -7004,7 +7004,7 @@ DefaultWindowSkin.prototype.clone = function() {
 /**
  * Swing.svg : SimpleWindowSkin
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     28th July 2005
@@ -7112,7 +7112,7 @@ SimpleWindowSkin.prototype.clone = function() {
 /**
  * Swing.svg : ListenerManager
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     12th Febuary 2005
@@ -7349,7 +7349,7 @@ ListenerManager.prototype.keyReleased = function( /* KeyEvent */ event) {}
 /**
  * Swing.svg : EventManager
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     12th Febuary 2005
@@ -7572,7 +7572,7 @@ EventManager.prototype.disableKeyListener = function(useCapture) {
 /**
  * Swing.svg : FlowLayout
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     12th Feb 2005
@@ -7883,7 +7883,7 @@ FlowLayout.prototype.toString = function() {
 /**
  * Swing.svg : BoxLayout
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     12th Feb 2005
@@ -8187,7 +8187,7 @@ BoxLayout.prototype.toString = function() {
 /**
  * Swing.svg : Component
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     30th January 2005 -> 15th July 2005
@@ -8869,7 +8869,7 @@ Component.prototype.toString = function() {
 /**
  * Swing.svg : Canvas
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     9th Feb 2005
@@ -8959,7 +8959,7 @@ Canvas.prototype.lostFocusCanvas = function() {
 /**
  * Swing.svg : Container
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     13th Feb 2005
@@ -9406,7 +9406,7 @@ Container.prototype.fireMouseMotionEventToComponent = function( /* component */ 
 /**
  * Swing.svg : Panel
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     9th Feb 2005
@@ -9479,7 +9479,7 @@ Panel.prototype.recalcPanel = function() {
 /**
  * Swing.svg : Icon
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     20th July 2005
@@ -9535,7 +9535,7 @@ Icon.prototype.translate = function(x, y) {
 /**
  * Swing.svg : Spinner
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     1st May 2015
@@ -9594,7 +9594,7 @@ Spinner.prototype.hide = function() {
 /**
  * Swing.svg : Label
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     15th July 2005
@@ -9842,7 +9842,7 @@ Label.prototype.toString = function() {
  *
  * SUPPORTS LOOK AND FEEL
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     11th Feb 2005
@@ -10043,7 +10043,7 @@ Button.prototype.toString = function() {
  *
  * SUPPORTS LOOK AND FEEL
  * 
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25 Augus 2005
@@ -10181,7 +10181,7 @@ CheckBox.prototype.toString = function() {
  *
  * SUPPORTS LOOK AND FEEL
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25 Augus 2005
@@ -10255,7 +10255,7 @@ RadioButton.prototype.setSelected = function( /* boolean */ selected) {
 /**
  * Swing.svg : ButtonGroup
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th July 2005
@@ -10356,7 +10356,7 @@ ButtonGroup.prototype.buttonGroupMouseClicked = function( /* MouseEvent */ e) {
 /**
  * Swing.svg : Toolbar
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     20th July 2005
@@ -10476,7 +10476,7 @@ Toolbar.prototype.actionPerformed = function( /* ActionEvent */ e) {
 /**
  * Swing.svg : TabbedPane
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     21th July 2005
@@ -10692,7 +10692,7 @@ TabbedPane.prototype.actionPerformed = function( /* ActionEvent */ e) {
 /**
  * Swing.svg : Pane
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     21th July 2005
@@ -11002,7 +11002,7 @@ Pane.prototype.recalcPaneOnly = function() {
 /**
  * Swing.svg : TitledBorder
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     15th July 2005
@@ -11172,7 +11172,7 @@ TitledBorder.prototype.positionComponent = function() {
 /**
  * Swing.svg : Separator
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th July 2005
@@ -11238,7 +11238,7 @@ Separator.prototype.recalcSeparator = function() {
 /**
  * Swing.svg : List
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th July 2005
@@ -11441,7 +11441,7 @@ List.prototype.getSelected = function() {
 /**
  * Swing.svg : PopUpMenu
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     25th July 2005
@@ -11543,7 +11543,7 @@ PopUpMenu.prototype.popUpMenuMousePressed = function( /* MouseEvent */ e) {
 /**
  * Swing.svg : TextBox (***** 5 Stars Widget)
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     5th July 2005 (me birthday)
@@ -12557,7 +12557,7 @@ TextBox.prototype.toString = function() {
 /**
  * Swing.svg : ComboBox
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     27th July 2005
@@ -12772,7 +12772,7 @@ ComboBox.prototype.actionPerformed = function( /* ActionEvent */ e) {
 /**
  * Swing.svg : Spin
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     17th November 2004
@@ -12976,7 +12976,7 @@ Spin.prototype.notifyListeners = function() {
 /**
  * Swing.svg : ColorComboBox
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     28th July 2005
@@ -13263,7 +13263,7 @@ ColorComboBox.prototype.getColor = function() {
 /**
  * Swing.svg : Window
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     11th Feb 2005 -> 28th July 2005
@@ -13636,7 +13636,7 @@ Window.prototype.actionPerformedWindow = function( /* ActionEvent */ e) {
  *
  * This is used to launch swing applications,...use callback function
  * 
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     9th September 2005

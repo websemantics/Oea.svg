@@ -3,7 +3,7 @@
  *
  * This is used to launch swing applications,...use callback function
  * 
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     9th September 2005

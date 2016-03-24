@@ -1,7 +1,7 @@
 /**
  * Draw2D.svg : Graphics
  *
- * @author    Adnan Sagar, PhD <adnan@websemantics.ca>
+ * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
  * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     4th Septemebr 2002 -> 5th November 2004 -> 18th July 2005
