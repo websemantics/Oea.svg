@@ -1,4 +1,5 @@
 # Oea.svg
+> Updated : March 24, 2016
 
 SVG GUI and Graphics Library built after Java AWT. The Oea Framework provides three Javascript libraries, 1- Java.js, 2- Draw2D.svg and 3- Swing.svg to build SVG GUI applications.
 
@@ -39,6 +40,29 @@ Download the original paper published in 2005 with more details [here](https://g
 ## Install
 
 Clone this repo and then run bower install. Check out the demo folder.
+
+## Install
+
+- Clone this repo
+
+```
+git clone https://github.com/websemantics/Oea.svg
+```
+
+- Install Node.js Modules
+
+```
+cd Oea.svg
+sudo npm install
+```
+
+- Install Bower dependencies
+
+```
+bower install
+```
+
+- View `index.html` in your browser
 
 ## Related Projects
 

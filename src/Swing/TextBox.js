@@ -231,9 +231,7 @@ TextBox.prototype.createSVGContentTextBox = function() {
         }
         
         // Get THE REAL baseline,.. 
-        this.cursorBaseline = this.textShape.getNode().getStartPositionOfChar(0).y;
-        
-        // this.cursorBaseline=fm.getBaseline(); 
+        this.cursorBaseline = this.getBaseline();
 
         // Set text
         if (this.text != null) this.setText(this.text);
@@ -304,6 +302,15 @@ TextBox.prototype.getDisplayText = function( /* String */ text) {
         return text;
     }
 
+TextBox.prototype.getBaseline = function(pos) {
+        
+        pos = pos || 0;
+        var textWidth = this.textShape.getNode().getBBox().width;
+        
+        // this.baseline = fm.getBaseline(); 
+        return ( textWidth > 0 ) ? this.textShape.getNode().getStartPositionOfChar(pos).y : 0;        
+}
+
 TextBox.prototype.setText = function( /* String */ text) {
 
         this.text = text;
@@ -373,7 +380,7 @@ TextBox.prototype.getStartPositionOfChar = function( /* int */ charPos) {
     // getStartPositionOfChar: Wrapper around SVG Interface
 
         if( charPos > -1) // Added April 28th 2015
-          return (this.textShape.getNode().getStartPositionOfChar(charPos));
+          return this.getBaseline(charPos);
         else 
           return 0;
     }
@@ -932,7 +939,7 @@ TextBox.prototype.setFont = function( /* Font */ font) {
         this.cursorWidth = fm.getStringWidth("i") / 4;
 
         // Get THE REAL baseline,.. 
-        this.cursorBaseline = this.textShape.getNode().getStartPositionOfChar(0).y;
+        this.cursorBaseline = this.getBaseline();
         this.cursorShape.setSize(this.cursorWidth, this.cursorHeight);
 
         this.setSize(this.w, this.h);
