@@ -2,7 +2,7 @@
  * Draw2D.svg : Font
  *
  * @author    Adnan M.Sagar, PhD. <adnan@websemantics.io>
- * @copyright 2004-2015 Web Semantics, Inc. (http://websemantics.ca)
+ * @copyright 2004-2016 Web Semantics, Inc. (http://websemantics.io)
  * @license   http://www.opensource.org/licenses/mit-license.php MIT
  * @since     4th Septemebr 2002
  * @package   websemantics/oea/draw2d.svg
